@@ -1,7 +1,7 @@
 - 👋 Hi, I’m @Sushrutha05
 - 👀 I’m interested in Tech
 - 🌱 I’m currently learning JavaScript and Ethical Hacking
-- 💞️ I’m looking to collaborate on anyhing
+- 💞️ I’m looking to collaborate on anything
 - 📫 How to reach me? LinkedIn or Github
 - 😄 Pronouns: He/Him
 
