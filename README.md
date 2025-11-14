@@ -37,13 +37,63 @@
     * Domains/Green: #10b981
     * Tools/Orange: #f97316
   
-  BADGE URL PATTERNS:
-  - Shields.io: https://img.shields.io/badge/{LABEL}-{MESSAGE}-{COLOR}?style={STYLE}&logo={LOGO}
-  - Skill Icons: https://skillicons.dev/icons?i={ICON_LIST}
-  - GitHub Stats: https://github-readme-stats.vercel.app/api?username={USERNAME}&{PARAMS}
-  - Streak Stats: https://github-readme-streak-stats.herokuapp.com/?user={USERNAME}&{PARAMS}
-  - Typing SVG: https://readme-typing-svg.demolab.com?{PARAMS}
-  - Visitor Badge: https://visitor-badge.laobi.icu/badge?page_id={PAGE_ID}&color={COLOR}
+  BADGE URL PATTERNS (Quick Reference):
+  
+  Shields.io (Custom Badges):
+  https://img.shields.io/badge/{LABEL}-{MESSAGE}-{COLOR}?style={STYLE}&logo={LOGO}&logoColor={LOGO_COLOR}
+  
+  Parameters:
+  - {LABEL}: Left side text (use _ for spaces, -- for hyphens)
+  - {MESSAGE}: Right side text (use _ for spaces, -- for hyphens)
+  - {COLOR}: Hex color without # (e.g., 6366f1 for indigo)
+  - {STYLE}: for-the-badge (large), flat-square (small), flat (default)
+  - {LOGO}: Logo name from simpleicons.org (e.g., github, linkedin, python)
+  - {LOGO_COLOR}: Logo color (white, black, or hex without #)
+  
+  Example: https://img.shields.io/badge/GitHub-Follow-6366f1?style=for-the-badge&logo=github&logoColor=white
+  
+  Skill Icons (Technology Logos):
+  https://skillicons.dev/icons?i={ICON_LIST}
+  
+  Parameters:
+  - {ICON_LIST}: Comma-separated icon codes (e.g., python,cpp,java,flutter)
+  - Available icons: https://github.com/tandpfun/skill-icons#icons-list
+  
+  Example: https://skillicons.dev/icons?i=python,cpp,java,flutter,javascript,mysql
+  
+  GitHub Stats (Dynamic Statistics):
+  https://github-readme-stats.vercel.app/api?username={USERNAME}&show_icons=true&theme={THEME}&bg_color={BG}&title_color={TITLE}&icon_color={ICON}&text_color={TEXT}&border_color={BORDER}&hide_border=false&border_radius={RADIUS}
+  
+  Example: https://github-readme-stats.vercel.app/api?username=Sushrutha05&show_icons=true&theme=tokyonight&bg_color=0a0a0a&title_color=6366f1&icon_color=818cf8&text_color=e2e2e2&border_color=ffffff1a&border_radius=10
+  
+  Top Languages (Dynamic Language Stats):
+  https://github-readme-stats.vercel.app/api/top-langs/?username={USERNAME}&layout=compact&theme={THEME}&bg_color={BG}&title_color={TITLE}&text_color={TEXT}&border_color={BORDER}&border_radius={RADIUS}
+  
+  Streak Stats (Contribution Streaks):
+  https://github-readme-streak-stats.herokuapp.com/?user={USERNAME}&theme={THEME}&background={BG}&ring={RING}&fire={FIRE}&currStreakLabel={LABEL}&border={BORDER}&stroke={STROKE}&sideLabels={SIDE}&dates={DATES}&border_radius={RADIUS}
+  
+  Typing SVG (Animated Text):
+  https://readme-typing-svg.demolab.com?font={FONT}&size={SIZE}&duration={DURATION}&pause={PAUSE}&color={COLOR}&center=true&vCenter=true&width={WIDTH}&lines={LINE1};{LINE2};{LINE3}
+  
+  Parameters:
+  - {FONT}: Font name (e.g., Inter, Roboto)
+  - {SIZE}: Font size in pixels (e.g., 50)
+  - {DURATION}: Animation duration in ms (e.g., 3000)
+  - {PAUSE}: Pause between lines in ms (e.g., 1000)
+  - {COLOR}: Hex color without # (e.g., 6366F1)
+  - {WIDTH}: SVG width in pixels (e.g., 800)
+  - {LINES}: Semicolon-separated lines (use + for spaces, %26 for &)
+  
+  Example: https://readme-typing-svg.demolab.com?font=Inter&size=50&duration=3000&pause=1000&color=6366F1&center=true&vCenter=true&width=800&lines=Sushrutha+Nayak;Multi-disciplinary+Developer
+  
+  Visitor Badge (Profile View Counter):
+  https://visitor-badge.laobi.icu/badge?page_id={PAGE_ID}&color={COLOR}
+  
+  Parameters:
+  - {PAGE_ID}: Format is {USERNAME}.{REPO} (e.g., Sushrutha05.Sushrutha05)
+  - {COLOR}: Hex color without # (e.g., 6366f1)
+  
+  Example: https://visitor-badge.laobi.icu/badge?page_id=Sushrutha05.Sushrutha05&color=6366f1
   
   DYNAMIC SERVICES (auto-updating):
   - GitHub Stats Cards: Updates automatically based on GitHub activity
@@ -52,6 +102,115 @@
   - Activity Graph: Updates automatically based on commits
   
   GITHUB USERNAME: Sushrutha05 (used in all dynamic services)
+  
+  ═══════════════════════════════════════════════════════════════════════════════
+  DETAILED MAINTENANCE INSTRUCTIONS
+  ═══════════════════════════════════════════════════════════════════════════════
+  
+  WORKFLOW FOR UPDATING CONTENT:
+  
+  1. UPDATE SOURCE DATA (site-config.js):
+     - Edit the relevant section in config/site-config.js
+     - This is the single source of truth for all content
+  
+  2. SYNC TO README:
+     - Find the corresponding section in this README
+     - Look for "CONTENT SOURCE: site-config.js > {path}" comments
+     - Update the content to match site-config.js
+     - Follow the data mapping comments (e.g., "skills[0].title")
+  
+  3. VERIFY CONSISTENCY:
+     - Check that colors match the palette defined above
+     - Ensure badge URLs follow the documented patterns
+     - Test all links to ensure they work
+     - Preview the README on GitHub to verify rendering
+  
+  SECTION-BY-SECTION GUIDE:
+  
+  Header Section:
+  - Source: site.name, site.title, site.description, social{}
+  - Update: Typing SVG URL, gradient text, social badge URLs
+  - Dynamic: Visitor counter (auto-updates)
+  
+  Skills Section:
+  - Source: skills[] array (4 items: Core, Languages, Domains, Tools)
+  - Update: Category badges, skill items, Skill Icons URL parameters
+  - Structure: 2x2 table grid with spacer rows/columns
+  
+  Projects Section:
+  - Source: projects[] array (3 items: NaadSwar, TabKeep, FingerSense)
+  - Update: Images, titles, descriptions, tech badges, links
+  - Structure: 3-column table with card styling
+  
+  Certifications Section:
+  - Source: certifications{} object (cloud[], programming[])
+  - Update: Badge logos, titles, issuers, years, descriptions
+  - Structure: Collapsible details sections with 2-column tables
+  
+  GitHub Stats Section:
+  - Source: Dynamic services (no manual updates needed!)
+  - Update: Only if changing username or theme colors
+  - Dynamic: All stats auto-update based on GitHub activity
+  
+  Connect Section:
+  - Source: social{} object
+  - Update: Social badge URLs and links
+  - Keep consistent with Header Section social links
+  
+  COMMON TASKS:
+  
+  Adding a new skill:
+  1. Add to site-config.js > skills[category].items[]
+  2. For text badge: Add <img src="https://img.shields.io/badge/{TEXT}-e2e2e2?..." />
+  3. For icon badge: Add icon code to Skill Icons URL (e.g., "python,cpp,java,NEW")
+  
+  Adding a new project:
+  1. Add to site-config.js > projects[]
+  2. Copy an existing project card <td> structure
+  3. Update image path, title, description, tech badges, link
+  4. Ensure image file exists in repository
+  
+  Adding a new certification:
+  1. Add to site-config.js > certifications.{category}[]
+  2. Copy an existing certification table row
+  3. Update badge URL with new logo and color
+  4. Update title, issuer, year, description
+  5. Add spacer row between certifications
+  
+  Changing colors:
+  1. Update color palette at top of this file
+  2. Find and replace old hex codes with new ones
+  3. Update all badge URLs with new color parameters
+  4. Update GitHub Stats service URLs with new theme colors
+  
+  Changing GitHub username:
+  1. Update in site-config.js > social.github
+  2. Find and replace "Sushrutha05" in all stat service URLs
+  3. Update visitor badge page_id parameter
+  4. Update social badge URLs
+  
+  TROUBLESHOOTING:
+  
+  Images not loading:
+  - Verify image paths are relative to repository root
+  - Check that image files exist in repository
+  - Ensure image URLs are properly formatted
+  
+  Badges not displaying:
+  - Check URL encoding (spaces = _, hyphens = --)
+  - Verify hex color codes don't include # symbol in URL
+  - Test badge URL in browser to see error message
+  
+  Stats not updating:
+  - Services cache data, may take hours to update
+  - Verify GitHub username is correct in URLs
+  - Check if service is online (rare downtime)
+  
+  Layout broken:
+  - Verify table structure (matching <tr> and <td> tags)
+  - Check spacer rows/columns are present
+  - Ensure colspan attributes are correct
+  - Preview on GitHub to see actual rendering
 -->
 
 <!-- ============================================ -->
@@ -246,43 +405,92 @@
 <br>
 
 <!-- Skills Grid with Card-like Styling -->
+<!-- 
+  COMPLEX HTML STRUCTURE EXPLANATION:
+  
+  This section uses an HTML table to create a 2x2 grid layout for skill categories.
+  GitHub's Markdown doesn't support CSS Grid or Flexbox, so tables are used for layout.
+  
+  TABLE STRUCTURE:
+  <table>
+    <tr>                                    <!-- Row 1: Core and Languages -->
+      <td> Core Skills Card </td>
+      <td width="20"></td>                  <!-- Spacer column (20px gap) -->
+      <td> Languages Skills Card </td>
+    </tr>
+    <tr>
+      <td colspan="3" height="20"></td>     <!-- Spacer row (20px gap) -->
+    </tr>
+    <tr>                                    <!-- Row 2: Domains and Tools -->
+      <td> Domains Skills Card </td>
+      <td width="20"></td>                  <!-- Spacer column (20px gap) -->
+      <td> Tools Skills Card </td>
+    </tr>
+  </table>
+  
+  CARD STYLING (applied to each <td>):
+  - width="400": Fixed width for consistent card sizes
+  - align="center": Center content within card
+  - style="border: 1px solid rgba(255,255,255,0.1)": Subtle white border (glassmorphic)
+  - style="border-radius: 10px": Rounded corners
+  - style="padding: 20px": Internal spacing
+  
+  SPACER ELEMENTS:
+  - Spacer columns: <td width="20"></td> creates horizontal gaps between cards
+  - Spacer rows: <td colspan="3" height="20"></td> creates vertical gaps between rows
+  - colspan="3" spans all three columns (card + spacer + card)
+-->
 <div align="center">
 
 <table>
   <tr>
-    <!-- Core Skills Card -->
+    <!-- Core Skills Card (Indigo #6366f1) -->
+    <!-- Source: site-config.js > skills[0] -->
+    <!-- Data: skills[0].title="Core", skills[0].items=["Software","Hardware","Intelligence"], skills[0].color="indigo" -->
     <td align="center" width="400" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 20px;">
       <img src="https://img.shields.io/badge/⚡_CORE-6366f1?style=for-the-badge&labelColor=0a0a0a" alt="Core Skills" />
       <br><br>
+      <!-- Text-based badges for Core skills -->
       <img src="https://img.shields.io/badge/Software-e2e2e2?style=flat-square&labelColor=0a0a0a&color=0a0a0a" alt="Software" />
       <img src="https://img.shields.io/badge/Hardware-e2e2e2?style=flat-square&labelColor=0a0a0a&color=0a0a0a" alt="Hardware" />
       <img src="https://img.shields.io/badge/Intelligence-e2e2e2?style=flat-square&labelColor=0a0a0a&color=0a0a0a" alt="Intelligence" />
     </td>
-    <td width="20"></td>
-    <!-- Languages Skills Card -->
+    <td width="20"></td> <!-- Horizontal spacer between Core and Languages cards -->
+    <!-- Languages Skills Card (Purple #a855f7) -->
+    <!-- Source: site-config.js > skills[1] -->
+    <!-- Data: skills[1].title="Languages", skills[1].items=["Python","C++","Java","Flutter","JavaScript","SQL"], skills[1].color="purple" -->
     <td align="center" width="400" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 20px;">
       <img src="https://img.shields.io/badge/💬_LANGUAGES-a855f7?style=for-the-badge&labelColor=0a0a0a" alt="Languages" />
       <br><br>
+      <!-- Skill Icons service for language logos -->
+      <!-- Pattern: https://skillicons.dev/icons?i={icon1,icon2,icon3} -->
+      <!-- Available icons: python, cpp, java, flutter, javascript, mysql, typescript, go, rust, etc. -->
       <img src="https://skillicons.dev/icons?i=python,cpp,java,flutter,javascript,mysql" alt="Languages: Python, C++, Java, Flutter, JavaScript, SQL" />
     </td>
   </tr>
-  <tr><td colspan="3" height="20"></td></tr>
+  <tr><td colspan="3" height="20"></td></tr> <!-- Vertical spacer between rows (spans all 3 columns) -->
   <tr>
-    <!-- Domains Skills Card -->
+    <!-- Domains Skills Card (Green #10b981) -->
+    <!-- Source: site-config.js > skills[2] -->
+    <!-- Data: skills[2].title="Domains", skills[2].items=["AI/ML","Embedded Systems","Mobile Development","Networking"], skills[2].color="green" -->
     <td align="center" width="400" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 20px;">
       <img src="https://img.shields.io/badge/🎯_DOMAINS-10b981?style=for-the-badge&labelColor=0a0a0a" alt="Domains" />
       <br><br>
+      <!-- Text-based badges for Domain skills -->
       <img src="https://img.shields.io/badge/AI/ML-e2e2e2?style=flat-square&labelColor=0a0a0a&color=0a0a0a" alt="AI/ML" />
       <img src="https://img.shields.io/badge/Embedded_Systems-e2e2e2?style=flat-square&labelColor=0a0a0a&color=0a0a0a" alt="Embedded Systems" />
       <br>
       <img src="https://img.shields.io/badge/Mobile_Development-e2e2e2?style=flat-square&labelColor=0a0a0a&color=0a0a0a" alt="Mobile Development" />
       <img src="https://img.shields.io/badge/Networking-e2e2e2?style=flat-square&labelColor=0a0a0a&color=0a0a0a" alt="Networking" />
     </td>
-    <td width="20"></td>
-    <!-- Tools Skills Card -->
+    <td width="20"></td> <!-- Horizontal spacer between Domains and Tools cards -->
+    <!-- Tools Skills Card (Orange #f97316) -->
+    <!-- Source: site-config.js > skills[3] -->
+    <!-- Data: skills[3].title="Tools", skills[3].items=["Supabase","OpenCV","MediaPipe","Git","Notion"], skills[3].color="orange" -->
     <td align="center" width="400" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 20px;">
       <img src="https://img.shields.io/badge/🔧_TOOLS-f97316?style=for-the-badge&labelColor=0a0a0a" alt="Tools" />
       <br><br>
+      <!-- Skill Icons service for tool logos -->
       <img src="https://skillicons.dev/icons?i=supabase,opencv,git,notion" alt="Tools: Supabase, OpenCV, Git, Notion" />
     </td>
   </tr>
@@ -300,6 +508,36 @@
 <!-- ============================================ -->
 <!-- PROJECTS SECTION -->
 <!-- ============================================ -->
+<!-- 
+  CONTENT SOURCE: site-config.js > projects[]
+  
+  This section displays three featured projects:
+  1. NaadSwar - Music streaming app (Flutter)
+  2. TabKeep - Browser extension (JavaScript, Chrome)
+  3. FingerSense - Computer vision system (Python, OpenCV, MediaPipe)
+  
+  TO UPDATE:
+  1. Update projects in site-config.js > projects[]
+  2. Update project images in respective folders (naadswar/, tabkeep/, fingersense/)
+  3. Update technology badges with appropriate logos and colors
+  4. Update project links to point to correct pages
+  
+  PROJECT STRUCTURE:
+  - Image: Hosted in repository folder (e.g., naadswar/image.png)
+  - Title: With emoji icon
+  - Description: Brief one-liner
+  - Tech badges: Using shields.io with official brand colors
+  - Category badge: Using indigo color (#6366f1)
+  - Link button: Using for-the-badge style
+  
+  TECHNOLOGY BADGE COLORS (official brand colors):
+  - Flutter: #02569B
+  - JavaScript: #F7DF1E (with black text)
+  - Chrome: #4285F4
+  - Python: #3776AB
+  - OpenCV: #5C3EE8
+  - MediaPipe: #0097A7
+-->
 
 <div align="center">
 
@@ -311,11 +549,22 @@
 <br>
 
 <!-- Projects Grid with Card-like Styling -->
+<!-- Three-column table layout for horizontal project cards -->
 <div align="center">
 
 <table>
   <tr>
     <!-- NaadSwar Project Card -->
+    <!-- Source: site-config.js > projects[0] -->
+    <!-- 
+      Project Data Mapping:
+      - Image: projects[0].image = "naadswar/image.png"
+      - Title: projects[0].title = "NaadSwar"
+      - Description: projects[0].description = "Music streaming app built with Flutter"
+      - Tags: projects[0].tags = ["Flutter"]
+      - Category: projects[0].category = "Mobile App"
+      - Link: projects[0].link = "naadswar_project_page.html"
+    -->
     <td align="center" width="300" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 20px;">
       <a href="naadswar_project_page.html">
         <img src="naadswar/image.png" width="250" style="border-radius: 8px;" alt="NaadSwar - Music streaming app" />
@@ -334,6 +583,16 @@
     <td width="20"></td>
     
     <!-- TabKeep Project Card -->
+    <!-- Source: site-config.js > projects[1] -->
+    <!-- 
+      Project Data Mapping:
+      - Image: projects[1].image = "tabkeep/icon128.png"
+      - Title: projects[1].title = "TabKeep"
+      - Description: projects[1].description = "Browser extension for tab management"
+      - Tags: projects[1].tags = ["JavaScript", "Chrome Extension API"]
+      - Category: projects[1].category = "Browser Extension"
+      - Link: projects[1].link = "tabkeep_project_page.html"
+    -->
     <td align="center" width="300" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 20px;">
       <a href="tabkeep_project_page.html">
         <img src="tabkeep/icon128.png" width="250" style="border-radius: 8px;" alt="TabKeep - Browser extension for tab management" />
@@ -354,6 +613,16 @@
     <td width="20"></td>
     
     <!-- FingerSense Project Card -->
+    <!-- Source: site-config.js > projects[2] -->
+    <!-- 
+      Project Data Mapping:
+      - Image: projects[2].image = "fingersense/FingerSenseDemo.png"
+      - Title: projects[2].title = "FingerSense"
+      - Description: projects[2].description = "Computer vision system for gesture recognition"
+      - Tags: projects[2].tags = ["Python", "OpenCV", "MediaPipe"]
+      - Category: projects[2].category = "Computer Vision"
+      - Link: projects[2].link = "fingersense_project_page.html"
+    -->
     <td align="center" width="300" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 20px;">
       <a href="fingersense_project_page.html">
         <img src="fingersense/FingerSenseDemo.png" width="250" style="border-radius: 8px;" alt="FingerSense - Computer vision system for gesture recognition" />
@@ -387,6 +656,53 @@
 <!-- ============================================ -->
 <!-- CERTIFICATIONS SECTION -->
 <!-- ============================================ -->
+<!-- 
+  CONTENT SOURCE: site-config.js > certifications{}
+  
+  This section displays four certifications organized by category:
+  1. Cloud Computing (AWS, Google Cloud) - site-config.js > certifications.cloud[]
+  2. Programming (Python, Flutter) - site-config.js > certifications.programming[]
+  
+  TO UPDATE:
+  1. Update certifications in site-config.js > certifications{}
+  2. Sync changes here by updating badge URLs, titles, issuers, years, descriptions
+  3. Add new certifications by copying the table row structure
+  4. Update badge logos and colors to match brand guidelines
+  
+  CERTIFICATION STRUCTURE (mirrors site-config.js structure):
+  - Category collapsible section using <details> and <summary> tags
+  - Two-column table layout: badge icon (left) + text content (right)
+  - Each certification includes:
+    * Badge with official brand logo and color
+    * Title: certification.title
+    * Issuer: certification.issuer
+    * Year: certification.year
+    * Description: certification.description
+  
+  CERTIFICATION BADGE PATTERN:
+  https://img.shields.io/badge/{LOGO_NAME}-{COLOR}?style=for-the-badge&logo={LOGO}&logoColor=white
+  
+  Example: https://img.shields.io/badge/AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white
+  
+  CERTIFICATION BADGE COLORS (official brand colors):
+  - AWS: #FF9900 (orange) - site-config.js > certifications.cloud[0]
+  - Google Cloud: #4285F4 (blue) - site-config.js > certifications.cloud[1]
+  - Python: #3776AB (blue) - site-config.js > certifications.programming[0]
+  - Flutter: #02569B (blue) - site-config.js > certifications.programming[1]
+  
+  COLLAPSIBLE SECTIONS:
+  - Uses HTML <details> and <summary> tags for expandable/collapsible categories
+  - "open" attribute makes sections expanded by default (remove to start collapsed)
+  - Allows users to collapse categories for cleaner view
+  - Each category corresponds to a key in site-config.js > certifications{}
+  
+  ADDING NEW CERTIFICATIONS:
+  1. Add to site-config.js > certifications.{category}[]
+  2. Copy an existing table row structure
+  3. Update badge URL with new logo and color
+  4. Update title, issuer, year, and description
+  5. Ensure spacing row (<tr><td colspan="2" height="10"></td></tr>) between items
+-->
 
 <div align="center">
 
@@ -481,6 +797,57 @@
 <!-- ============================================ -->
 <!-- GITHUB STATS SECTION -->
 <!-- ============================================ -->
+<!-- 
+  DYNAMIC CONTENT - AUTO-UPDATING (No manual updates needed!)
+  
+  This section uses external services that automatically update based on GitHub activity:
+  1. GitHub Stats Card - Shows commits, stars, PRs, issues
+  2. Top Languages Card - Shows most used programming languages
+  3. Streak Stats Card - Shows contribution consistency
+  4. Activity Graph - Shows contribution timeline
+  
+  SERVICES USED:
+  - GitHub Readme Stats: https://github.com/anuraghazra/github-readme-stats
+  - GitHub Readme Streak Stats: https://github.com/DenverCoder1/github-readme-streak-stats
+  - GitHub Readme Activity Graph: https://github.com/Ashutosh00710/github-readme-activity-graph
+  
+  GITHUB USERNAME: Sushrutha05 (used in all stat service URLs)
+  
+  TO UPDATE USERNAME:
+  - Find and replace "Sushrutha05" with new username in all stat card URLs
+  - Update in site-config.js > social.github as well
+  
+  THEME CUSTOMIZATION:
+  All stat cards use consistent dark theme with indigo accents to match portfolio design.
+  
+  Common Parameters:
+  - username: Sushrutha05 (GitHub username)
+  - theme: tokyonight (base theme)
+  - bg_color: 0a0a0a (dark background, matches portfolio)
+  - title_color: 6366f1 (indigo, primary accent)
+  - icon_color: 818cf8 (light indigo, secondary accent)
+  - text_color: e2e2e2 (light gray text)
+  - border_color: ffffff1a (subtle white border, rgba(255,255,255,0.1))
+  - border_radius: 10 (rounded corners)
+  
+  GITHUB STATS CARD URL PATTERN:
+  https://github-readme-stats.vercel.app/api?username={USERNAME}&show_icons=true&theme={THEME}&bg_color={BG}&title_color={TITLE}&icon_color={ICON}&text_color={TEXT}&border_color={BORDER}&hide_border=false&border_radius={RADIUS}
+  
+  TOP LANGUAGES CARD URL PATTERN:
+  https://github-readme-stats.vercel.app/api/top-langs/?username={USERNAME}&layout=compact&theme={THEME}&bg_color={BG}&title_color={TITLE}&text_color={TEXT}&border_color={BORDER}&hide_border=false&border_radius={RADIUS}
+  
+  STREAK STATS CARD URL PATTERN:
+  https://github-readme-streak-stats.herokuapp.com/?user={USERNAME}&theme={THEME}&background={BG}&ring={RING_COLOR}&fire={FIRE_COLOR}&currStreakLabel={LABEL_COLOR}&border={BORDER}&stroke={STROKE}&sideLabels={SIDE_LABELS}&dates={DATES}&border_radius={RADIUS}
+  
+  ACTIVITY GRAPH URL PATTERN:
+  https://github-readme-activity-graph.vercel.app/graph?username={USERNAME}&bg_color={BG}&color={TEXT}&line={LINE}&point={POINT}&area=true&hide_border=false&border_color={BORDER}&radius={RADIUS}
+  
+  TROUBLESHOOTING:
+  - If stats don't load: Check if service is online (services have 99%+ uptime)
+  - If stats are outdated: Services cache data, may take a few hours to update
+  - If username is wrong: Update all instances of "Sushrutha05" in URLs
+  - If colors look off: Verify hex color codes match portfolio palette (see top of file)
+-->
 
 <div align="center">
 
@@ -538,6 +905,29 @@
 <!-- ============================================ -->
 <!-- CONNECT SECTION -->
 <!-- ============================================ -->
+<!-- 
+  CONTENT SOURCE: site-config.js > social{}
+  
+  This section provides a call-to-action for visitors to connect via social platforms.
+  
+  SOCIAL LINKS (from site-config.js):
+  - GitHub: social.github = "https://github.com/Sushrutha05"
+  - LinkedIn: social.linkedin = "https://www.linkedin.com/in/sushrutha-nayak-528775293/"
+  - Email: social.email = "mailto:sushruthavn@gmail.com"
+  
+  TO UPDATE:
+  1. Update links in site-config.js > social{}
+  2. Sync changes here by updating badge href attributes
+  3. Keep badge colors consistent with indigo theme (#6366f1)
+  
+  BADGE PATTERN:
+  https://img.shields.io/badge/{PLATFORM}-{ACTION}-{COLOR}?style=for-the-badge&logo={LOGO}&logoColor=white
+  
+  Examples:
+  - GitHub: https://img.shields.io/badge/GitHub-Follow-6366f1?style=for-the-badge&logo=github&logoColor=white
+  - LinkedIn: https://img.shields.io/badge/LinkedIn-Connect-6366f1?style=for-the-badge&logo=linkedin&logoColor=white
+  - Email: https://img.shields.io/badge/Email-Reach_Out-6366f1?style=for-the-badge&logo=gmail&logoColor=white
+-->
 
 <div align="center">
 
