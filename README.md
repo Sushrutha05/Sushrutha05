@@ -1,8 +1,9 @@
 <div align="center">
 
-# 👋 Hi, I'm Sushrutha Nayak
+<!-- Animated Typing Header -->
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=32&duration=2800&pause=2000&color=6366F1&center=true&vCenter=true&width=600&lines=Hi+%F0%9F%91%8B+I'm+Sushrutha+Nayak;Multi-disciplinary+Developer;%26+Designer" alt="Typing SVG" />
 
-### Multi-disciplinary Developer & Designer
+<br>
 
 *Engineering student passionate about building technology that blends software, hardware, and intelligence.*
 
@@ -16,7 +17,12 @@
 
 </div>
 
----
+<br>
+
+<!-- Wave Divider -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=6366f1&height=100&section=header" width="100%"/>
+
+<br>
 
 ## 🛠️ Tech Stack
 
@@ -45,7 +51,12 @@
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
 
----
+<br>
+
+<!-- Divider -->
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=12,14,18&height=2" width="100%"/>
+
+<br>
 
 ## 📊 GitHub Stats
 
@@ -59,7 +70,12 @@
 
 </div>
 
----
+<br>
+
+<!-- Divider -->
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=12,14,18&height=2" width="100%"/>
+
+<br>
 
 ## 🏆 GitHub Trophies
 
@@ -69,7 +85,12 @@
 
 </div>
 
----
+<br>
+
+<!-- Divider -->
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=12,14,18&height=2" width="100%"/>
+
+<br>
 
 <div align="center">
 
@@ -83,5 +104,10 @@ I'm always open to interesting conversations and collaboration opportunities.
 ---
 
 ⭐ From [Sushrutha05](https://github.com/Sushrutha05)
+
+<br>
+
+<!-- Wave Footer -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=6366f1&height=100&section=footer" width="100%"/>
 
 </div>
