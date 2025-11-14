@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <!-- Meta tags will be injected here -->
+    <!-- Dynamic Meta Tags Component -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sushrutha Nayak - Multi-disciplinary Developer & Designer</title>
+<meta name="description" content="Engineering student passionate about building technology that blends software, hardware, and intelligence.">
+<meta name="keywords" content="Sushrutha Nayak, developer, engineer, AI, machine learning, mobile development, Flutter, Python, portfolio">
+<meta name="author" content="Sushrutha Nayak">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sushruthanayak.com/home.html">
+<meta property="og:title" content="Sushrutha Nayak - Multi-disciplinary Developer & Designer">
+<meta property="og:description" content="Engineering student passionate about building technology that blends software, hardware, and intelligence.">
+<meta property="og:image" content="https://sushruthanayak.com/headshot.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://sushruthanayak.com/home.html">
+<meta property="twitter:title" content="Sushrutha Nayak - Multi-disciplinary Developer & Designer">
+<meta property="twitter:description" content="Engineering student passionate about building technology that blends software, hardware, and intelligence.">
+<meta property="twitter:image" content="https://sushruthanayak.com/headshot.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <!-- Common Stylesheets -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <script src="config/site-config.js"></script>
+    <script src="js/components.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body class="antialiased overflow-x-hidden">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-black z-50 flex items-center justify-center">
+        <div class="text-center">
+            <div class="w-16 h-16 border-4 border-indigo-500/30 border-t-indigo-500 rounded-full animate-spin mx-auto mb-4"></div>
+            <p class="text-white text-lg">Loading Experience...</p>
+        </div>
+    </div>
+
+    <!-- Particle Background -->
+    <canvas id="particle-canvas"></canvas>
+    <div class="cursor-glow"></div>
+
+    <div id="root" class="relative z-10 ">
+        <!-- Header Component -->
+        <!-- Reusable Header Component -->
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center glass-card mt-4 rounded-xl transition-all duration-300">
+        <a href="index.html" class="text-xl font-bold tracking-wider">Sushrutha Nayak</a>
+        
+        <ul class="hidden md:flex items-center space-x-8">
+            <li><a href="home.html" class="nav-link hover:text-indigo-400 transition-colors duration-300" data-page="home">Home</a></li>
+            <li><a href="work.html" class="nav-link hover:text-indigo-400 transition-colors duration-300" data-page="work">Work</a></li>
+            <li><a href="certifications.html" class="nav-link hover:text-indigo-400 transition-colors duration-300" data-page="certifications">Certifications</a></li>
+            <li><a href="contact.html" class="nav-link hover:text-indigo-400 transition-colors duration-300" data-page="contact">Contact</a></li>
+        </ul>
+
+        <a href="mailto:sushruthavn@gmail.com" class="hidden md:block bg-white/10 border border-white/20 hover:bg-white/20 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300">
+            Get In Touch
+        </a>
+
+        <a href="Sushrutha-Resume.pdf" target="_blank" class="hidden md:block bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300">
+            View Resume
+        </a>
+        
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="hidden md:block text-white p-2 transition-colors duration-300">
+            <svg class="w-5 h-5 dark-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+            </svg>
+            <svg class="w-5 h-5 light-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+            </svg>
+        </button>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden text-white p-2">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </nav>
+    
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black/90 backdrop-blur-sm z-40 md:hidden hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="home.html" class="text-2xl text-white hover:text-indigo-400 transition-colors duration-300">Home</a>
+            <a href="work.html" class="text-2xl text-white hover:text-indigo-400 transition-colors duration-300">Work</a>
+            <a href="certifications.html" class="text-2xl text-white hover:text-indigo-400 transition-colors duration-300">Certifications</a>
+            <a href="contact.html" class="text-2xl text-white hover:text-indigo-400 transition-colors duration-300">Contact</a>
+            <div class="flex flex-col space-y-4 mt-8">
+                <a href="mailto:sushruthavn@gmail.com" class="bg-white/10 border border-white/20 hover:bg-white/20 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 text-center">
+                    Get In Touch
+                </a>
+                <a href="Sushrutha-Resume.pdf" target="_blank" class="bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 text-center">
+                    View Resume
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <!-- Main Content -->
+        <main class="container mx-auto px-6">
+            
+            <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center relative">
+                <div class="max-w-4xl scroll-reveal relative z-10">
+                    <h1 id="hero-title" class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-6">
+                        <!-- Content generated by JS -->
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
+                        Engineering student passionate about building technology that blends software, hardware, and intelligence.
+                    </p>
+                </div>
+                <a href="#about" class="absolute bottom-10 animate-bounce z-10">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                    </svg>
+                </a>
+            </section>
+        
+            <section id="about" class="py-20 lg:py-32">
+                <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+                    <div class="md:col-span-1 scroll-reveal">
+                        <img src="headshot.png" alt="Sushrutha Portrait" class="rounded-full aspect-square object-cover shadow-2xl shadow-indigo-900/50">
+                    </div>
+                    <div class="md:col-span-2">
+                        <div class="scroll-reveal glass-card p-8 rounded-xl">
+                            <h2 class="text-scramble text-3xl font-bold mb-4 gradient-text">About Me</h2>
+                            <p class="text-gray-400 mb-4 leading-relaxed">
+                                I am an engineering student passionate about building technology that blends software, hardware, and intelligence.
+                            </p>
+                            <p class="text-gray-400 mb-4 leading-relaxed">
+                                My work ranges from real-time mobile applications to embedded systems, with projects in AI, networking, and human-computer interaction. I enjoy taking an idea from concept to execution — designing clean, functional solutions that feel intuitive and purposeful.
+                            </p>
+                            <p class="text-gray-400 leading-relaxed">
+                                For me, engineering is not just about solving problems, but about creating experiences that are precise, scalable, and meaningful.
+                            </p>
+                        </div>
+                        <!-- Skills Section Component -->
+<div class="mt-12 scroll-reveal" style="transition-delay: 200ms;">
+    <h3 class="text-scramble text-2xl font-bold mb-6 text-white">My Skills</h3>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6" id="skills-container">
+        <!-- Skills will be dynamically generated -->
+    </div>
+</div>
+
+<script>
+// Generate skills from config
+if (window.SiteConfig && window.SiteConfig.skills) {
+    const skillsContainer = document.getElementById('skills-container');
+    if (skillsContainer) {
+        skillsContainer.innerHTML = window.SiteConfig.skills.map(skill => `
+            <div class="glass-card p-6 rounded-xl hover:bg-white/5 transition-all duration-300">
+                <div class="w-10 h-10 bg-gradient-to-br from-${skill.color}-500 to-${skill.color}-600 rounded-lg flex items-center justify-center text-white font-bold text-sm mb-4">
+                    ${skill.icon}
+                </div>
+                <h4 class="font-semibold text-indigo-300 mb-3">${skill.title}</h4>
+                <ul class="space-y-2 text-gray-400">
+                    ${skill.items.map(item => `<li>${item}</li>`).join('')}
+                </ul>
+            </div>
+        `).join('');
+    }
+}
+</script>
+                    </div>
+                </div>
+            </section>
+        
+        </main>
+
+        <!-- Footer Component -->
+        <!-- Reusable Footer Component -->
+<footer class="border-t border-white/10 mt-16">
+    <div class="container mx-auto px-6 py-6 text-center text-gray-500">
+        <p>&copy; 2025 Sushrutha. All Rights Reserved.</p>
+    </div>
+</footer>
+    </div>
+</body>
+</html>

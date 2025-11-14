@@ -1,0 +1,44 @@
+<!-- Certifications Grid Component -->
+<div id="certifications-container">
+    <!-- Certifications will be dynamically generated -->
+</div>
+
+<script>
+// Generate certifications from config
+if (window.SiteConfig && window.SiteConfig.certifications) {
+    const certificationsContainer = document.getElementById('certifications-container');
+    if (certificationsContainer) {
+        let html = '';
+        
+        Object.entries(window.SiteConfig.certifications).forEach(([category, certs], index) => {
+            const categoryTitle = category.charAt(0).toUpperCase() + category.slice(1).replace(/([A-Z])/g, ' $1');
+            
+            html += `
+                <div class="mb-20 scroll-reveal" style="transition-delay: ${index * 200}ms;">
+                    <h3 class="text-scramble text-2xl font-bold mb-8 text-white">${categoryTitle}</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        ${certs.map(cert => `
+                            <div class="glass-card p-6 rounded-xl hover:bg-white/5 transition-all duration-300 group">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-${cert.color}-500 to-${cert.color}-600 rounded-lg flex items-center justify-center text-white font-bold text-lg">
+                                        ${cert.icon}
+                                    </div>
+                                    <span class="text-xs text-gray-500 bg-gray-800/50 px-2 py-1 rounded-full">${cert.year}</span>
+                                </div>
+                                <h4 class="text-lg font-semibold text-white mb-2">${cert.title}</h4>
+                                <p class="text-gray-400 text-sm mb-4">${cert.description}</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs text-indigo-300 bg-indigo-500/20 px-2 py-1 rounded-full">${cert.category}</span>
+                                    <a href="${cert.link}" class="text-indigo-400 hover:text-indigo-300 text-sm transition-colors duration-300">View Certificate</a>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        });
+        
+        certificationsContainer.innerHTML = html;
+    }
+}
+</script>

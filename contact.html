@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <!-- Meta tags will be injected here -->
+    <!-- Dynamic Meta Tags Component -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact & Collaboration - Sushrutha Nayak</title>
+<meta name="description" content="Get in touch for project collaborations and technical discussions.">
+<meta name="keywords" content="Sushrutha Nayak, developer, engineer, AI, machine learning, mobile development, Flutter, Python, portfolio">
+<meta name="author" content="Sushrutha Nayak">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sushruthanayak.com/contact.html">
+<meta property="og:title" content="Contact & Collaboration - Sushrutha Nayak">
+<meta property="og:description" content="Get in touch for project collaborations and technical discussions.">
+<meta property="og:image" content="https://sushruthanayak.com/headshot.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://sushruthanayak.com/contact.html">
+<meta property="twitter:title" content="Contact & Collaboration - Sushrutha Nayak">
+<meta property="twitter:description" content="Get in touch for project collaborations and technical discussions.">
+<meta property="twitter:image" content="https://sushruthanayak.com/headshot.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <!-- Common Stylesheets -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <script src="config/site-config.js"></script>
+    <script src="js/components.js"></script>
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="js/email-service.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body class="antialiased overflow-x-hidden">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-black z-50 flex items-center justify-center">
+        <div class="text-center">
+            <div class="w-16 h-16 border-4 border-indigo-500/30 border-t-indigo-500 rounded-full animate-spin mx-auto mb-4"></div>
+            <p class="text-white text-lg">Loading Experience...</p>
+        </div>
+    </div>
+
+    <!-- Particle Background -->
+    <canvas id="particle-canvas"></canvas>
+    <div class="cursor-glow"></div>
+
+    <div id="root" class="relative z-10 flex flex-col min-h-screen">
+        <!-- Header Component -->
+        <!-- Reusable Header Component -->
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center glass-card mt-4 rounded-xl transition-all duration-300">
+        <a href="index.html" class="text-xl font-bold tracking-wider">Sushrutha Nayak</a>
+        
+        <ul class="hidden md:flex items-center space-x-8">
+            <li><a href="home.html" class="nav-link hover:text-indigo-400 transition-colors duration-300" data-page="home">Home</a></li>
+            <li><a href="work.html" class="nav-link hover:text-indigo-400 transition-colors duration-300" data-page="work">Work</a></li>
+            <li><a href="certifications.html" class="nav-link hover:text-indigo-400 transition-colors duration-300" data-page="certifications">Certifications</a></li>
+            <li><a href="contact.html" class="nav-link hover:text-indigo-400 transition-colors duration-300" data-page="contact">Contact</a></li>
+        </ul>
+
+        <a href="mailto:sushruthavn@gmail.com" class="hidden md:block bg-white/10 border border-white/20 hover:bg-white/20 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300">
+            Get In Touch
+        </a>
+
+        <a href="Sushrutha-Resume.pdf" target="_blank" class="hidden md:block bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300">
+            View Resume
+        </a>
+        
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="hidden md:block text-white p-2 transition-colors duration-300">
+            <svg class="w-5 h-5 dark-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+            </svg>
+            <svg class="w-5 h-5 light-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+            </svg>
+        </button>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden text-white p-2">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </nav>
+    
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black/90 backdrop-blur-sm z-40 md:hidden hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="home.html" class="text-2xl text-white hover:text-indigo-400 transition-colors duration-300">Home</a>
+            <a href="work.html" class="text-2xl text-white hover:text-indigo-400 transition-colors duration-300">Work</a>
+            <a href="certifications.html" class="text-2xl text-white hover:text-indigo-400 transition-colors duration-300">Certifications</a>
+            <a href="contact.html" class="text-2xl text-white hover:text-indigo-400 transition-colors duration-300">Contact</a>
+            <div class="flex flex-col space-y-4 mt-8">
+                <a href="mailto:sushruthavn@gmail.com" class="bg-white/10 border border-white/20 hover:bg-white/20 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 text-center">
+                    Get In Touch
+                </a>
+                <a href="Sushrutha-Resume.pdf" target="_blank" class="bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 text-center">
+                    View Resume
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <!-- Main Content -->
+        <main class="container mx-auto px-6 flex-grow">
+            
+            <section id="contact" class="pt-40 flex flex-col items-center justify-center h-full">
+                <div class="text-center mb-16 scroll-reveal">
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-4 gradient-text">Let's Connect</h2>
+                    <p class="text-lg text-gray-400 max-w-2xl mx-auto">I'm always open to discussing new projects, creative ideas, or opportunities to be part of an ambitious vision. Feel free to reach out.</p>
+                </div>
+
+                <!-- Contact Methods Component -->
+<div class="w-full max-w-4xl mb-12 scroll-reveal" style="transition-delay: 100ms;">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="contact-methods-container">
+        <!-- Contact methods will be dynamically generated -->
+    </div>
+</div>
+
+<script>
+// Generate contact methods from config
+if (window.SiteConfig && window.SiteConfig.contactMethods) {
+    const contactMethodsContainer = document.getElementById('contact-methods-container');
+    if (contactMethodsContainer) {
+        contactMethodsContainer.innerHTML = window.SiteConfig.contactMethods.map(method => `
+            <div class="glass-card p-6 rounded-xl text-center hover:bg-white/5 transition-all duration-300 group">
+                <div class="w-12 h-12 bg-gradient-to-br from-${method.color}-500 to-${method.color}-600 rounded-lg flex items-center justify-center text-white font-bold text-lg mx-auto mb-4">
+                    ${method.icon}
+                </div>
+                <h3 class="text-lg font-semibold text-white mb-2">${method.name}</h3>
+                <p class="text-gray-400 text-sm mb-4">${method.description}</p>
+                <a href="${method.link}" class="text-indigo-400 hover:text-indigo-300 transition-colors duration-300 text-sm">
+                    ${method.action}
+                </a>
+            </div>
+        `).join('');
+    }
+}
+</script>
+
+                <div class="w-full max-w-2xl scroll-reveal" style="transition-delay: 200ms;">
+                    <div class="glass-card p-8 md:p-12 rounded-2xl">
+                        <h3 class="text-2xl font-bold text-white mb-6 text-center">Send a Message</h3>
+                        <form id="contact-form" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name</label>
+                                    <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300" placeholder="Your name">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                                    <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300" placeholder="your@email.com">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-gray-300 mb-2">Subject</label>
+                                <input type="text" id="subject" name="subject" required class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300" placeholder="What's this about?">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                                <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300 resize-none" placeholder="Tell me about your project or idea..."></textarea>
+                            </div>
+                            <!-- Honeypot field for bot detection -->
+                            <div style="position: absolute; left: -9999px; opacity: 0; pointer-events: none;">
+                                <label for="website">Website (leave blank)</label>
+                                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                <button type="submit" id="submit-btn" class="bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
+                                    <span class="submit-text">Send Message</span>
+                                    <span class="loading-text hidden">Sending...</span>
+                                </button>
+                                <a href="mailto:sushruthavn@gmail.com" class="bg-white/10 border border-white/20 hover:bg-white/20 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 text-center">
+                                    Direct Email
+                                </a>
+                            </div>
+                        </form>
+                        <div id="form-message" class="mt-4 text-center hidden"></div>
+                    </div>
+                </div>
+
+                <div class="w-full max-w-2xl scroll-reveal mt-8" style="transition-delay: 300ms;">
+                    <div class="glass-card p-6 rounded-xl text-center">
+                        <p class="text-gray-400 mb-4">Prefer a direct approach?</p>
+                        <a href="mailto:sushruthavn@gmail.com" class="text-xl text-indigo-300 hover:text-indigo-200 transition-colors duration-300 font-mono">
+                            sushruthavn@gmail.com
+                        </a>
+                    </div>
+                </div>
+            </section>
+        
+        </main>
+
+        <!-- Footer Component -->
+        <!-- Reusable Footer Component -->
+<footer class="border-t border-white/10 mt-16">
+    <div class="container mx-auto px-6 py-6 text-center text-gray-500">
+        <p>&copy; 2025 Sushrutha. All Rights Reserved.</p>
+    </div>
+</footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,226 @@
+/**
+ * Component-specific CSS
+ * Modular styles for reusable components
+ */
+
+/* Component Base Styles */
+.component {
+    position: relative;
+}
+
+/* Hero Component */
+.hero-component {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-title {
+    perspective: 500px;
+}
+
+.hero-title .hero-word {
+    display: inline-block;
+}
+
+.hero-title .hero-char {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Skills Component */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.1);
+}
+
+/* Projects Component */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    aspect-ratio: 1;
+    transform-style: preserve-3d;
+}
+
+.project-card-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.project-card:hover .project-card-glow {
+    opacity: 1;
+}
+
+/* Certifications Component */
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.certification-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certification-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.1);
+}
+
+/* Contact Methods Component */
+.contact-methods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.contact-method-card {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.contact-method-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Stats Component */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.stat-card {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+}
+
+/* Page Header Component */
+.page-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.page-header h1,
+.page-header h2 {
+    margin-bottom: 1rem;
+}
+
+/* Component Animations */
+@keyframes componentFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.component-animate {
+    animation: componentFadeIn 0.6s ease-out;
+}
+
+/* Responsive Component Adjustments */
+@media (max-width: 768px) {
+    .skills-grid,
+    .projects-grid,
+    .certifications-grid,
+    .contact-methods-grid,
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .component {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .page-header h1,
+    .page-header h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Component Loading States */
+.component-loading {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.component-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #6366f1;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Component Error States */
+.component-error {
+    padding: 2rem;
+    text-align: center;
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: 0.5rem;
+}
+
+/* Component Success States */
+.component-success {
+    padding: 1rem;
+    text-align: center;
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-radius: 0.5rem;
+}

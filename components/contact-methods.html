@@ -1,0 +1,27 @@
+<!-- Contact Methods Component -->
+<div class="w-full max-w-4xl mb-12 scroll-reveal" style="transition-delay: 100ms;">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="contact-methods-container">
+        <!-- Contact methods will be dynamically generated -->
+    </div>
+</div>
+
+<script>
+// Generate contact methods from config
+if (window.SiteConfig && window.SiteConfig.contactMethods) {
+    const contactMethodsContainer = document.getElementById('contact-methods-container');
+    if (contactMethodsContainer) {
+        contactMethodsContainer.innerHTML = window.SiteConfig.contactMethods.map(method => `
+            <div class="glass-card p-6 rounded-xl text-center hover:bg-white/5 transition-all duration-300 group">
+                <div class="w-12 h-12 bg-gradient-to-br from-${method.color}-500 to-${method.color}-600 rounded-lg flex items-center justify-center text-white font-bold text-lg mx-auto mb-4">
+                    ${method.icon}
+                </div>
+                <h3 class="text-lg font-semibold text-white mb-2">${method.name}</h3>
+                <p class="text-gray-400 text-sm mb-4">${method.description}</p>
+                <a href="${method.link}" class="text-indigo-400 hover:text-indigo-300 transition-colors duration-300 text-sm">
+                    ${method.action}
+                </a>
+            </div>
+        `).join('');
+    }
+}
+</script>

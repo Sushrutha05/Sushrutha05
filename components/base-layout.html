@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <!-- Meta tags will be injected here -->
+    {{META_TAGS}}
+    
+    <!-- Common Stylesheets -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <script src="config/site-config.js"></script>
+    <script src="js/components.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body class="antialiased overflow-x-hidden">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-black z-50 flex items-center justify-center">
+        <div class="text-center">
+            <div class="w-16 h-16 border-4 border-indigo-500/30 border-t-indigo-500 rounded-full animate-spin mx-auto mb-4"></div>
+            <p class="text-white text-lg">Loading Experience...</p>
+        </div>
+    </div>
+
+    <!-- Particle Background -->
+    <canvas id="particle-canvas"></canvas>
+    <div class="cursor-glow"></div>
+
+    <div id="root" class="relative z-10 {{LAYOUT_CLASS}}">
+        <!-- Header Component -->
+        {{HEADER}}
+
+        <!-- Main Content -->
+        <main class="{{MAIN_CLASS}}">
+            {{CONTENT}}
+        </main>
+
+        <!-- Footer Component -->
+        {{FOOTER}}
+    </div>
+</body>
+</html>
