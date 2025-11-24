@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Name - Sushrutha Nayak</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e2e2e2;
+            cursor: none;
+        }
+
+        .cursor-glow {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, rgba(99, 102, 241, 0) 60%);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 9999;
+            transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+        }
+
+        .cursor-glow.active {
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, rgba(99, 102, 241, 0) 70%);
+        }
+
+        header.scrolled nav {
+            background: rgba(15, 15, 18, 0.7);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .glass-card {
+            background: rgba(24, 24, 27, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .nav-link.active {
+            color: #818cf8;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #a5b4fc, #6366f1, #a5b4fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shimmer 5s linear infinite;
+        }
+
+        @keyframes shimmer {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        #particle-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 0;
+        }
+    </style>
+</head>
+
+<body class="antialiased overflow-x-hidden">
+
+    <canvas id="particle-canvas"></canvas>
+    <div class="cursor-glow"></div>
+
+    <div id="root" class="relative z-10">
+        <!-- Header Navigation -->
+        <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+            <nav
+                class="container mx-auto px-6 py-4 flex justify-between items-center glass-card mt-4 rounded-xl transition-all duration-300">
+                <a href="index.html" class="text-xl font-bold tracking-wider">Sushrutha Nayak</a>
+                <ul class="hidden md:flex items-center space-x-8">
+                    <li><a href="home.html"
+                            class="nav-link hover:text-indigo-400 transition-colors duration-300">Home</a></li>
+                    <li><a href="work.html"
+                            class="nav-link hover:text-indigo-400 transition-colors duration-300">Work</a></li>
+                    <li><a href="contact.html"
+                            class="nav-link hover:text-indigo-400 transition-colors duration-300">Contact</a></li>
+                </ul>
+                <a href="mailto:sushruthavn@gmail.com"
+                    class="hidden md:block bg-white/10 border border-white/20 hover:bg-white/20 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300">
+                    Get In Touch
+                </a>
+
+                <a href="Sushrutha-Resume.pdf" target="_blank"
+                    class="hidden md:block bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300">
+                    View Resume
+                </a>
+            </nav>
+        </header>
+
+        <main class="container mx-auto px-6 pt-40 md:pt-48">
+
+            <!-- Project Hero -->
+            <section class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Column: Text Content -->
+                <div class="scroll-reveal">
+                    <h1 class="text-5xl md:text-7xl font-bold tracking-tighter mb-4 gradient-text">Project Title Here
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-400 max-w-xl mb-8">A brief, one-sentence summary of what this
+                        project is all about.</p>
+
+                    <div class="flex items-center space-x-4">
+                        <a href="#"
+                            class="bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2 px-6 rounded-lg transition-all duration-300">
+                            Live Site
+                        </a>
+                        <a href="#"
+                            class="bg-white/10 border border-white/20 hover:bg-white/20 text-white font-medium py-2 px-6 rounded-lg transition-all duration-300">
+                            View Code
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Image -->
+                <div class="scroll-reveal" style="transition-delay: 150ms;">
+                    <img src="https://placehold.co/1200x800/1e1b4b/a5b4fc?text=Project+Image" alt="Project main image"
+                        class="rounded-xl shadow-2xl shadow-indigo-900/50 w-full object-cover">
+                </div>
+            </section>
+
+            <!-- Project Details -->
+            <section class="py-20 lg:py-24">
+                <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16">
+                    <!-- Left Column: Overview -->
+                    <div class="md:col-span-2">
+                        <div class="scroll-reveal">
+                            <h2 class="text-3xl font-bold mb-4 text-white">Project Overview</h2>
+                            <p class="text-gray-400 mb-4 leading-relaxed">
+                                Write a detailed description of your project here. Explain the problem you were trying
+                                to solve and the goals you set out to achieve. Talk about the target audience and the
+                                core purpose of the application.
+                            </p>
+                            <p class="text-gray-400 leading-relaxed">
+                                Go into more detail about your process. Discuss the technology stack you chose and why.
+                                Mention any interesting challenges you faced during development and how you overcame
+                                them. This is your space to tell the story behind the project.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Right Column: Key Info -->
+                    <div class="md:col-span-1">
+                        <div class="glass-card p-6 rounded-xl scroll-reveal">
+                            <h3 class="text-xl font-bold mb-4">Key Features</h3>
+                            <ul class="list-disc list-inside space-y-2 text-gray-400 mb-6">
+                                <li>Real-time data synchronization</li>
+                                <li>User authentication and profiles</li>
+                                <li>Interactive data visualizations</li>
+                                <li>Responsive design for all devices</li>
+                            </ul>
+
+                            <h3 class="text-xl font-bold mb-4">Technologies Used</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="text-xs bg-indigo-500/20 text-indigo-300 px-2 py-1 rounded-full">React</span>
+                                <span
+                                    class="text-xs bg-indigo-500/20 text-indigo-300 px-2 py-1 rounded-full">Node.js</span>
+                                <span
+                                    class="text-xs bg-indigo-500/20 text-indigo-300 px-2 py-1 rounded-full">Supabase</span>
+                                <span class="text-xs bg-indigo-500/20 text-indigo-300 px-2 py-1 rounded-full">Tailwind
+                                    CSS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="border-t border-white/10 mt-16">
+            <div class="container mx-auto px-6 py-6 text-center text-gray-500">
+                <p>&copy; 2025 Sushrutha. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Active Nav Link ---
+            document.querySelectorAll('.nav-link').forEach(link => {
+                // Highlight 'Work' since this is a project page
+                if (link.getAttribute('href') === 'work.html') {
+                    link.classList.add('active');
+                }
+            });
+
+            // --- Interactivity (Cursor, Header Scroll) ---
+            const cursorGlow = document.querySelector('.cursor-glow');
+            document.addEventListener('mousemove', (e) => {
+                cursorGlow.style.left = `${e.clientX}px`;
+                cursorGlow.style.top = `${e.clientY}px`;
+            });
+
+            document.querySelectorAll('a, button').forEach(el => {
+                el.addEventListener('mouseenter', () => cursorGlow.classList.add('active'));
+                el.addEventListener('mouseleave', () => cursorGlow.classList.remove('active'));
+            });
+
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                header.classList.toggle('scrolled', window.scrollY > 50);
+            });
+
+            // --- Scroll Reveal ---
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const delay = entry.target.style.transitionDelay ? parseInt(entry.target.style.transitionDelay.replace('ms', '')) : 0;
+                        setTimeout(() => entry.target.classList.add('visible'), delay);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+            // --- Particle Canvas ---
+            const canvas = document.getElementById('particle-canvas');
+            if (canvas) {
+                const ctx = canvas.getContext('2d');
+                let particles = [];
+                const mouse = { x: null, y: null };
+
+                function resizeCanvas() {
+                    canvas.width = window.innerWidth;
+                    canvas.height = document.body.scrollHeight;
+                }
+
+                document.addEventListener('mousemove', (e) => {
+                    mouse.x = e.clientX;
+                    mouse.y = e.clientY + window.scrollY;
+                });
+
+                class Particle {
+                    constructor() {
+                        this.x = Math.random() * canvas.width;
+                        this.y = Math.random() * canvas.height;
+                        this.size = Math.random() * 1.5 + 1;
+                        this.speedX = Math.random() * 2 - 1;
+                        this.speedY = Math.random() * 2 - 1;
+                    }
+                    update() {
+                        if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
+                        if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
+                        this.x += this.speedX;
+                        this.y += this.speedY;
+                    }
+                    draw() {
+                        ctx.fillStyle = 'rgba(165, 180, 252, 0.5)';
+                        ctx.beginPath();
+                        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                }
+
+                function init() {
+                    particles = [];
+                    let numberOfParticles = (canvas.width * canvas.height) / 3500;
+                    for (let i = 0; i < numberOfParticles; i++) {
+                        particles.push(new Particle());
+                    }
+                }
+
+                function connect() {
+                    let opacityValue = 1;
+                    for (let a = 0; a < particles.length; a++) {
+                        for (let b = a; b < particles.length; b++) {
+                            let distance = ((particles[a].x - particles[b].x) * (particles[a].x - particles[b].x)) +
+                                ((particles[a].y - particles[b].y) * (particles[a].y - particles[b].y));
+                            if (distance < (canvas.width / 7) * (canvas.height / 7)) {
+                                opacityValue = 1 - (distance / 20000);
+                                ctx.strokeStyle = `rgba(165, 180, 252, ${opacityValue})`;
+                                ctx.lineWidth = 0.5;
+                                ctx.beginPath();
+                                ctx.moveTo(particles[a].x, particles[a].y);
+                                ctx.lineTo(particles[b].x, particles[b].y);
+                                ctx.stroke();
+                            }
+                        }
+                    }
+                    if (mouse.x && mouse.y) {
+                        for (let a = 0; a < particles.length; a++) {
+                            let distance = ((particles[a].x - mouse.x) * (particles[a].x - mouse.x)) +
+                                ((particles[a].y - mouse.y) * (particles[a].y - mouse.y));
+                            if (distance < (canvas.width / 8) * (canvas.height / 8)) {
+                                opacityValue = 1 - (distance / 20000);
+                                ctx.strokeStyle = `rgba(255, 255, 255, ${opacityValue * 0.5})`;
+                                ctx.lineWidth = 1;
+                                ctx.beginPath();
+                                ctx.moveTo(particles[a].x, particles[a].y);
+                                ctx.lineTo(mouse.x, mouse.y);
+                                ctx.stroke();
+                            }
+                        }
+                    }
+                }
+
+                function animate() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    for (let i = 0; i < particles.length; i++) {
+                        particles[i].update();
+                        particles[i].draw();
+                    }
+                    connect();
+                    requestAnimationFrame(animate);
+                }
+
+                resizeCanvas();
+                init();
+                animate();
+
+                window.addEventListener('resize', () => {
+                    resizeCanvas();
+                    init();
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

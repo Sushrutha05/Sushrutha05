@@ -1,0 +1,56 @@
+<!-- Reusable Header Component -->
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center glass-card mt-4 rounded-xl transition-all duration-300">
+        <a href="index.html" class="text-xl font-bold tracking-wider">Sushrutha Nayak</a>
+        
+        <ul class="hidden md:flex items-center space-x-8">
+            <li><a href="home.html" class="nav-link hover:text-indigo-400 transition-colors duration-300" data-page="home">Home</a></li>
+            <li><a href="work.html" class="nav-link hover:text-indigo-400 transition-colors duration-300" data-page="work">Work</a></li>
+            <li><a href="certifications.html" class="nav-link hover:text-indigo-400 transition-colors duration-300" data-page="certifications">Certifications</a></li>
+            <li><a href="contact.html" class="nav-link hover:text-indigo-400 transition-colors duration-300" data-page="contact">Contact</a></li>
+        </ul>
+
+        <a href="mailto:sushruthavn@gmail.com" class="hidden md:block bg-white/10 border border-white/20 hover:bg-white/20 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300">
+            Get In Touch
+        </a>
+
+        <a href="Sushrutha-Resume.pdf" target="_blank" class="hidden md:block bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300">
+            View Resume
+        </a>
+        
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="hidden md:block text-white p-2 transition-colors duration-300">
+            <svg class="w-5 h-5 dark-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+            </svg>
+            <svg class="w-5 h-5 light-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+            </svg>
+        </button>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden text-white p-2">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </nav>
+    
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black/90 backdrop-blur-sm z-40 md:hidden hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="home.html" class="text-2xl text-white hover:text-indigo-400 transition-colors duration-300">Home</a>
+            <a href="work.html" class="text-2xl text-white hover:text-indigo-400 transition-colors duration-300">Work</a>
+            <a href="certifications.html" class="text-2xl text-white hover:text-indigo-400 transition-colors duration-300">Certifications</a>
+            <a href="contact.html" class="text-2xl text-white hover:text-indigo-400 transition-colors duration-300">Contact</a>
+            <div class="flex flex-col space-y-4 mt-8">
+                <a href="mailto:sushruthavn@gmail.com" class="bg-white/10 border border-white/20 hover:bg-white/20 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 text-center">
+                    Get In Touch
+                </a>
+                <a href="Sushrutha-Resume.pdf" target="_blank" class="bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 text-center">
+                    View Resume
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
