@@ -32,9 +32,9 @@
 <table align="center">
   <tr>
     <td align="center" width="800">
-      <img src="https://img.shields.io/badge/%F0%9F%8E%93_Student-Engineering-6366f1?style=flat-square&labelColor=0a0a0a" />
-      <img src="https://img.shields.io/badge/%F0%9F%8C%8D_Based_in-India-10b981?style=flat-square&labelColor=0a0a0a" />
-      <img src="https://img.shields.io/badge/%F0%9F%92%A1_Focus-Full_Stack_Development-a855f7?style=flat-square&labelColor=0a0a0a" />
+      <img src="https://img.shields.io/badge/Student-Engineering-6366f1?style=for-the-badge&logo=google-scholar&logoColor=white&labelColor=101010" />
+      <img src="https://img.shields.io/badge/Based_in-India-10b981?style=for-the-badge&logo=google-maps&logoColor=white&labelColor=101010" />
+      <img src="https://img.shields.io/badge/Focus-Full_Stack-a855f7?style=for-the-badge&logo=target&logoColor=white&labelColor=101010" />
       <br><br>
       <p align="left">
         I'm a passionate engineering student who loves building technology that bridges the gap between software, hardware, and artificial intelligence. My journey spans from creating mobile applications and browser extensions to developing computer vision systems and exploring cloud technologies.
@@ -110,30 +110,49 @@
 <summary><b>📦 Full Tech Stack</b></summary>
 <br>
 
-![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)
-![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white)
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+<br>
 
-![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white)
-![OpenCV](https://img.shields.io/badge/opencv-%23white.svg?style=for-the-badge&logo=opencv&logoColor=white)
-![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
-![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+<h3 align="center">Languages</h3>
+<p align="center">
+  <img src="https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white" />
+  <img src="https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white" />
+  <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" />
+  <img src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white" />
+  <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" />
+  <img src="https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white" />
+</p>
 
-![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
-![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white)
-![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
-![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white)
+<h3 align="center">Frontend & Mobile</h3>
+<p align="center">
+  <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" />
+  <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" />
+  <img src="https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+</p>
 
-![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
-![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
+<h3 align="center">Backend, Database & Cloud</h3>
+<p align="center">
+  <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" />
+  <img src="https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white" />
+</p>
+
+<h3 align="center">Tools & Platforms</h3>
+<p align="center">
+  <img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" />
+  <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" />
+  <img src="https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white" />
+  <img src="https://img.shields.io/badge/Figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white" />
+  <img src="https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white" />
+</p>
+
+<h3 align="center">Data Science & AI</h3>
+<p align="center">
+  <img src="https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white" />
+  <img src="https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white" />
+  <img src="https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black" />
+  <img src="https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white" />
+  <img src="https://img.shields.io/badge/opencv-%23white.svg?style=for-the-badge&logo=opencv&logoColor=white" />
+</p>
 
 </details>
 
@@ -153,10 +172,10 @@
   <table>
     <tr>
       <td>
-        <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Sushrutha05&show_icons=true&theme=radical&hide_border=false&include_all_commits=true&count_private=true&border_radius=10" />
+        <img height="180em" src="https://github-readme-stats-eight-theta.vercel.app/api?username=Sushrutha05&show_icons=true&theme=radical&hide_border=false&include_all_commits=true&count_private=true&border_radius=10" />
       </td>
       <td>
-        <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Sushrutha05&layout=compact&theme=radical&hide_border=false&include_all_commits=true&count_private=true&border_radius=10" />
+        <img height="180em" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=Sushrutha05&layout=compact&theme=radical&hide_border=false&include_all_commits=true&count_private=true&border_radius=10" />
       </td>
     </tr>
   </table>
@@ -181,19 +200,19 @@
 
 <br>
 
-
-<!-- Divider -->
-<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=12,14,18&height=2" width="100%"/>
-
-<br>
-
 <!-- LeetCode Stats -->
 <h2 align="center">💡 Coding Stats</h2>
 
 <br>
 
 <div align="center">
-  <img src="https://leetcard.jacoblin.cool/Sushrutha_?theme=dark&font=Ubuntu&ext=heatmap" alt="LeetCode Stats" />
+  <a href="https://leetcode.com/Sushrutha_/">
+    <img src="https://leetcard.jacoblin.cool/Sushrutha_?theme=radical&font=Ubuntu&ext=heatmap" alt="LeetCode Stats" />
+  </a>
+  <br><br>
+  <a href="https://leetcode.com/Sushrutha_/">
+    <img src="https://img.shields.io/badge/LeetCode-View_Profile-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" />
+  </a>
 </div>
 
 <br>
