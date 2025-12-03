@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { SiteConfig } from '../config/site-config';
-import { ArrowLeft, CheckCircle, Layers, Cpu } from 'lucide-react';
+import { ArrowLeft, CheckCircle, Layers, Cpu, Github, ExternalLink, Download } from 'lucide-react';
 
 const ProjectPage = () => {
     const { id } = useParams();
@@ -72,6 +72,53 @@ const ProjectPage = () => {
 
                     <div className="lg:col-span-1">
                         <div className="sticky top-32 space-y-8">
+                            {/* Actions / Links */}
+                            <div className="p-6 border border-white/5 bg-machine-surface/50">
+                                <h3 className="text-sm font-bold text-white uppercase tracking-widest mb-6 flex items-center gap-2">
+                                    <ExternalLink className="w-4 h-4 text-machine-accent" /> Actions
+                                </h3>
+                                <div className="flex flex-col gap-3">
+                                    {project.links?.github && (
+                                        <a
+                                            href={project.links.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center justify-between px-4 py-3 bg-white/5 hover:bg-white/10 border border-white/5 hover:border-machine-accent/50 transition-all duration-300 group"
+                                        >
+                                            <span className="text-machine-platinum text-sm group-hover:text-white">View on GitHub</span>
+                                            <Github className="w-4 h-4 text-machine-platinum group-hover:text-white" />
+                                        </a>
+                                    )}
+                                    {project.links?.demo && (
+                                        <a
+                                            href={project.links.demo}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center justify-between px-4 py-3 bg-machine-accent/10 hover:bg-machine-accent/20 border border-machine-accent/20 hover:border-machine-accent/50 transition-all duration-300 group"
+                                        >
+                                            <span className="text-machine-accent text-sm group-hover:text-white">Live Demo</span>
+                                            <ExternalLink className="w-4 h-4 text-machine-accent group-hover:text-white" />
+                                        </a>
+                                    )}
+                                    {project.links?.external && (
+                                        <a
+                                            href={project.links.external.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center justify-between px-4 py-3 bg-machine-accent/10 hover:bg-machine-accent/20 border border-machine-accent/20 hover:border-machine-accent/50 transition-all duration-300 group"
+                                        >
+                                            <span className="text-machine-accent text-sm group-hover:text-white">{project.links.external.label}</span>
+                                            {project.links.external.label.toLowerCase().includes('download') ? (
+                                                <Download className="w-4 h-4 text-machine-accent group-hover:text-white" />
+                                            ) : (
+                                                <ExternalLink className="w-4 h-4 text-machine-accent group-hover:text-white" />
+                                            )}
+                                        </a>
+                                    )}
+                                </div>
+                            </div>
+
+                            {/* Tech Stack */}
                             <div className="p-6 border border-white/5 bg-machine-surface/50">
                                 <h3 className="text-sm font-bold text-white uppercase tracking-widest mb-6 flex items-center gap-2">
                                     <Layers className="w-4 h-4 text-machine-accent" /> Tech Stack

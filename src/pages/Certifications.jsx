@@ -1,7 +1,54 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { SiteConfig } from '../config/site-config';
 import { Award, Shield, CheckCircle } from 'lucide-react';
+
+const CertificationCard = ({ cert, index }) => {
+    const [imageError, setImageError] = useState(false);
+
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1, duration: 0.5 }}
+            className="h-full"
+        >
+            <a
+                href={cert.verificationLink || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block h-full group relative bg-machine-surface border border-white/5 p-8 hover:border-machine-accent/50 transition-colors duration-300 cursor-pointer"
+            >
+                <div className="absolute top-0 right-0 p-4 transition-opacity duration-300 opacity-50 group-hover:opacity-100">
+                    {!imageError && cert.logo ? (
+                        <img
+                            src={cert.logo}
+                            alt={`${cert.title} logo`}
+                            className="w-16 h-16 object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                            onError={() => setImageError(true)}
+                        />
+                    ) : (
+                        <Shield className="w-12 h-12 text-machine-accent" strokeWidth={1} />
+                    )}
+                </div>
+
+                <div className="mb-6">
+                    <span className="text-machine-accent font-mono text-xs mb-2 block flex items-center gap-2">
+                        {cert.id}
+                        <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">↗</span>
+                    </span>
+                    <h3 className="text-xl font-display font-bold text-white mb-1">{cert.title}</h3>
+                    <p className="text-machine-platinum/60 text-sm">{cert.issuer}</p>
+                </div>
+
+                <div className="flex items-center justify-between border-t border-white/5 pt-4 mt-auto">
+                    <span className="text-machine-platinum/40 text-xs uppercase tracking-widest">{cert.type}</span>
+                    <span className="text-white font-mono text-xs">{cert.year}</span>
+                </div>
+            </a>
+        </motion.div>
+    );
+};
 
 const Certifications = () => {
     return (
@@ -23,29 +70,7 @@ const Certifications = () => {
             <section className="container mx-auto px-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {SiteConfig.certifications.map((cert, index) => (
-                        <motion.div
-                            key={cert.id}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1, duration: 0.6 }}
-                            className="group relative bg-machine-surface border border-white/5 p-8 hover:border-machine-accent/50 transition-colors duration-300"
-                        >
-                            <div className="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-100 transition-opacity duration-300">
-                                <Shield className="w-12 h-12 text-machine-accent" strokeWidth={1} />
-                            </div>
-
-                            <div className="mb-6">
-                                <span className="text-machine-accent font-mono text-xs mb-2 block">{cert.id}</span>
-                                <h3 className="text-xl font-display font-bold text-white mb-1">{cert.title}</h3>
-                                <p className="text-machine-platinum/60 text-sm">{cert.issuer}</p>
-                            </div>
-
-                            <div className="flex items-center justify-between border-t border-white/5 pt-4 mt-auto">
-                                <span className="text-machine-platinum/40 text-xs uppercase tracking-widest">{cert.type}</span>
-                                <span className="text-white font-mono text-xs">{cert.year}</span>
-                            </div>
-                        </motion.div>
+                        <CertificationCard key={cert.id} cert={cert} index={index} />
                     ))}
                 </div>
             </section>

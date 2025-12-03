@@ -64,7 +64,14 @@ export const SiteConfig = {
                 "Dynamic Noise Cancellation",
                 "Visual Histogram Feedback",
                 "Adaptive Frequency Mapping"
-            ]
+            ],
+            links: {
+                github: "https://github.com/Sushrutha05/NaadSwar",
+                external: {
+                    url: "https://play.google.com/store/apps/details?id=com.naadswar",
+                    label: "Download App"
+                }
+            }
         },
         {
             id: "tabkeep",
@@ -80,7 +87,14 @@ export const SiteConfig = {
                 "Cross-Device State Sync",
                 "Memory Leak Prevention",
                 "O(1) Tab Retrieval"
-            ]
+            ],
+            links: {
+                github: "https://github.com/Sushrutha05/TabKeep",
+                external: {
+                    url: "https://chrome.google.com/webstore/detail/tabkeep",
+                    label: "Add to Chrome"
+                }
+            }
         },
         {
             id: "fingersense",
@@ -96,7 +110,10 @@ export const SiteConfig = {
                 "Vector-Based Gesture Logic",
                 "Real-time Gaussian Blur",
                 "Multi-Threaded Processing"
-            ]
+            ],
+            links: {
+                github: "https://github.com/Sushrutha05/FingerSense"
+            }
         }
     ],
 
@@ -106,21 +123,27 @@ export const SiteConfig = {
             issuer: "Amazon Web Services",
             year: "2024",
             id: "AWS-CP",
-            type: "Cloud Infrastructure"
+            type: "Cloud Infrastructure",
+            logo: "/logos/aws-cp.png",
+            verificationLink: "https://www.credly.com/badges/your-badge-id"
         },
         {
             title: "Google Cloud Digital Leader",
             issuer: "Google Cloud",
             year: "2024",
             id: "GCP-DL",
-            type: "Cloud Strategy"
+            type: "Cloud Strategy",
+            logo: "/logos/gcp-dl.png",
+            verificationLink: "https://www.credly.com/badges/your-badge-id"
         },
         {
             title: "PCAP – Python Associate",
             issuer: "Python Institute",
             year: "2024",
             id: "PCAP-31-03",
-            type: "Language Proficiency"
+            type: "Language Proficiency",
+            logo: "/logos/pcap-31-03.png",
+            verificationLink: "https://verify.pythoninstitute.org/"
         }
     ]
 };

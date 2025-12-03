@@ -102,7 +102,7 @@ const Home = () => {
                                 <p className="text-machine-platinum/40 text-xs uppercase tracking-widest">Years Experience</p>
                             </div>
                             <div>
-                                <h3 className="text-white font-display font-bold text-3xl mb-2">15+</h3>
+                                <h3 className="text-white font-display font-bold text-3xl mb-2">{SiteConfig.projects.length}</h3>
                                 <p className="text-machine-platinum/40 text-xs uppercase tracking-widest">Projects Shipped</p>
                             </div>
                         </div>
