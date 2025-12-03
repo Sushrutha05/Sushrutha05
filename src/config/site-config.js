@@ -1,53 +1,37 @@
-/**
- * Site Configuration
- * Precision Engineering & Luxury Aesthetic
- */
+import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
 
 export const SiteConfig = {
+    metadata: {
+        title: "Sushrutha",
+        description: "Portfolio of Sushrutha - Machine Learning Engineer & Developer",
+        author: "Sushrutha",
+        siteUrl: "https://sushrutha.dev",
+    },
+
     site: {
-        name: "Sushrutha Nayak",
-        title: "Engineering The Future",
-        tagline: "Precision. Intelligence. Scale.",
-        description: "Designing high-performance systems at the intersection of software, hardware, and artificial intelligence.",
-        url: "https://sushruthanayak.com",
-        email: "sushruthavn@gmail.com",
-        resume: "Sushrutha-Resume.pdf",
-        cv: "Sushrutha-CV.pdf"
+        cv: "/Sushrutha-CV.pdf",
+        resume: "/Sushrutha-Resume.pdf"
     },
 
     social: {
         github: "https://github.com/Sushrutha05",
-        linkedin: "https://www.linkedin.com/in/sushrutha-nayak-528775293/",
-        email: "mailto:sushruthavn@gmail.com"
+        linkedin: "https://www.linkedin.com/in/sushrutha-r-a01049257/",
+        email: "mailto:sushruthar05@gmail.com",
+        twitter: "https://x.com/Sushrutha_05"
     },
 
     navigation: [
-        { name: "Overview", href: "/", id: "home" },
-        { name: "Projects", href: "/work", id: "work" },
-        { name: "Credentials", href: "/certifications", id: "certifications" },
-        { name: "Contact", href: "/contact", id: "contact" }
+        { name: "Home", href: "/" },
+        { name: "Work", href: "/work" },
+        { name: "Credentials", href: "/certifications" },
+        { name: "Contact", href: "/contact" }
     ],
 
-    skills: [
-        {
-            category: "Core Engineering",
-            items: [
-                { name: "System Architecture", level: 90 },
-                { name: "Full-Stack Development", level: 85 },
-                { name: "Embedded Systems", level: 80 },
-                { name: "AI Integration", level: 75 }
-            ]
-        },
-        {
-            category: "Technologies",
-            items: [
-                { name: "Python / C++", level: 95 },
-                { name: "React / Next.js", level: 90 },
-                { name: "Flutter / Dart", level: 85 },
-                { name: "TensorFlow / PyTorch", level: 70 }
-            ]
-        }
-    ],
+    skills: {
+        expert: ["Python", "Machine Learning", "Data Analysis", "React", "C"],
+        proficient: ["Java", "SQL", "Git", "TensorFlow", "Scikit-Learn"],
+        familiar: ["Docker", "AWS", "C++", "Flutter"]
+    },
 
     projects: [
         {
@@ -58,61 +42,129 @@ export const SiteConfig = {
             image: "/naadswar/image.png",
             tags: ["Signal Processing", "Flutter", "Real-time Audio"],
             link: "/projects/naadswar",
-            overview: "NaadSwar is an engineered solution for acoustic precision. By leveraging Fast Fourier Transform (FFT) algorithms, it decomposes audio signals in real-time to provide instantaneous visual feedback on pitch accuracy. The system is calibrated for the micro-tonal nuances of Indian Classical Music.",
+            overview: "NaadSwar is a minimal, real-time pitch detection app built for Indian classical musicians. It listens to your voice or instrument and maps the detected pitch to the closest swar — covering all three saptaks (Mandra, Madhya, Taar) and all note types (Shuddh, Komal, and Teevra). Perfect for vocalists, bansuri players, and anyone practicing pitch precision. ",
             features: [
-                "Real-time FFT Audio Analysis",
-                "Dynamic Noise Cancellation",
+                "Live microphone input",
+                "Debug Settings Screen with adjustable Gain, History Size, and Buffer Size",
                 "Visual Histogram Feedback",
-                "Adaptive Frequency Mapping"
+                "Notation Cheatsheet for quick reference",
+                "Customizable base Sa frequency"
             ],
             links: {
-                github: "https://github.com/Sushrutha05/NaadSwar",
                 external: {
-                    url: "https://play.google.com/store/apps/details?id=com.naadswar",
+                    url: "https://drive.google.com/uc?export=download&id=1VkXRROFYG7HVIse-xmvWeDH5XDb_vsbq",
                     label: "Download App"
-                }
-            }
-        },
-        {
-            id: "tabkeep",
-            title: "TabKeep",
-            subtitle: "Session Management Protocol",
-            description: "High-performance browser resource optimization and state management extension.",
-            image: "/tabkeep/icon128.png",
-            tags: ["Chrome API", "State Management", "Performance"],
-            link: "/projects/tabkeep",
-            overview: "TabKeep optimizes browser memory usage by serializing and storing inactive session states. It interfaces directly with the Chrome Extensions API to manage tab lifecycles, reducing system resource consumption while maintaining persistent state across devices.",
-            features: [
-                "Session Serialization",
-                "Cross-Device State Sync",
-                "Memory Leak Prevention",
-                "O(1) Tab Retrieval"
-            ],
-            links: {
-                github: "https://github.com/Sushrutha05/TabKeep",
-                external: {
-                    url: "https://chrome.google.com/webstore/detail/tabkeep",
-                    label: "Add to Chrome"
                 }
             }
         },
         {
             id: "fingersense",
             title: "FingerSense",
-            subtitle: "Computer Vision Pipeline",
-            description: "Real-time gesture recognition system using MediaPipe and OpenCV.",
-            image: "/fingersense/FingerSenseDemo.png",
-            tags: ["Computer Vision", "Python", "MediaPipe"],
+            subtitle: "Biometric Authentication System",
+            description: "High-precision fingerprint recognition algorithm using minutiae extraction.",
+            image: "/fingersense/image.png",
+            tags: ["Computer Vision", "Python", "Biometrics"],
             link: "/projects/fingersense",
-            overview: "FingerSense implements a robust computer vision pipeline for gesture recognition. Utilizing MediaPipe's hand landmark model, it calculates geometric vectors between keypoints to classify gestures in real-time with high confidence intervals.",
+            overview: "FingerSense is a biometric authentication system designed for high security and accuracy. It utilizes advanced image processing techniques to extract minutiae points from fingerprint images, creating a unique digital signature for each user. The system is robust against rotation and partial occlusion.",
             features: [
-                "21-Point Hand Tracking",
-                "Vector-Based Gesture Logic",
-                "Real-time Gaussian Blur",
-                "Multi-Threaded Processing"
+                "Minutiae extraction (ridge endings and bifurcations)",
+                "Image enhancement and binarization",
+                "Fast matching algorithm",
+                "Secure template storage"
             ],
             links: {
-                github: "https://github.com/Sushrutha05/FingerSense"
+                github: "https://github.com/Sushrutha05/Fingerprint-Recognition"
+            }
+        },
+        {
+            id: "tabkeep",
+            title: "TabKeep",
+            subtitle: "Browser Resource Manager",
+            description: "Intelligent chrome extension for managing tab clutter and memory usage.",
+            image: "/tabkeep/image.png",
+            tags: ["JavaScript", "Chrome API", "Productivity"],
+            link: "/projects/tabkeep",
+            overview: "TabKeep is a productivity-focused Chrome extension that helps users manage their browser tabs efficiently. It allows users to save groups of tabs, suspend inactive tabs to save memory, and quickly restore sessions. It's designed to reduce browser clutter and improve system performance.",
+            features: [
+                "Save and restore tab sessions",
+                "Auto-suspend inactive tabs",
+                "Search across open tabs",
+                "Dark mode support"
+            ],
+            links: {
+                github: "https://github.com/Sushrutha05/Tab-Manager"
+            }
+        },
+        {
+            id: "text-to-pdf",
+            title: "TextToPDF",
+            subtitle: "Document Conversion Tool",
+            description: "Efficient utility for converting raw text files into formatted PDF documents.",
+            image: "/texttopdf/image.png",
+            tags: ["Python", "File Processing", "Automation"],
+            link: "/projects/text-to-pdf",
+            overview: "TextToPDF is a simple yet powerful utility for converting text files into professional-looking PDF documents. It supports custom fonts, page numbering, and margin adjustments. It's ideal for automating report generation or archiving text data.",
+            features: [
+                "Batch processing of text files",
+                "Customizable font and layout settings",
+                "Automatic table of contents generation",
+                "Standalone .exe for easy installation"
+            ],
+            links: {
+                github: "https://github.com/Sushrutha05/PDF-APP"
+            }
+        },
+        {
+            id: "telco-churn",
+            title: "Telco Churn",
+            subtitle: "Customer Retention Analysis",
+            description: "Predicting customer churn in the telecom industry using machine learning models.",
+            tags: ["Python", "Scikit-Learn", "Data Analysis", "EDA"],
+            link: "/projects/telco-churn",
+            overview: "This project focuses on predicting customer churn using the Telco Customer Churn dataset. It analyzes customer behavior and service usage patterns to determine the likelihood of a customer leaving their telecom provider. The goal is to build a robust machine learning pipeline for classification and pattern discovery.",
+            features: [
+                "Data Preprocessing: Handling missing values, encoding categorical variables, feature scaling",
+                "Exploratory Data Analysis (EDA): Analyzing churn distribution, feature correlations, and patterns",
+                "Model Training: Logistic Regression, Decision Trees, Random Forest, XGBoost",
+                "Evaluation: Accuracy, Precision, Recall, and F1-score metrics"
+            ],
+            links: {
+                github: "https://github.com/Sushrutha05/Telco-Customer-Churn"
+            }
+        },
+        {
+            id: "iris-ml-model",
+            title: "Iris ML Model Comparison",
+            subtitle: "Classification & Regression Analysis",
+            description: "Comparing various ML models on the classic Iris dataset.",
+            tags: ["Python", "Scikit-Learn", "Classification", "Regression"],
+            link: "/projects/iris-ml-model",
+            overview: "This project explores a variety of machine learning models applied to the classic Iris dataset. While the dataset is inherently a classification problem, both classification and regression models were implemented to deepen understanding of their behavior, performance, and use cases.",
+            features: [
+                "Classification Models: KNN, Logistic Regression, Decision Tree, SVC",
+                "Regression Models: KNN, Linear, Decision Tree, SVR",
+                "Performance Analysis: F1 Score 1.0 (Classification), R² Score 1.0 (Regression)"
+            ],
+            links: {
+                github: "https://github.com/Sushrutha05/Iris-ML-Model"
+            }
+        },
+        {
+            id: "custom-ml-lib",
+            title: "mllib",
+            subtitle: "Machine Learning Library in C",
+            description: "A lightweight and extensible ML library written in pure C.",
+            tags: ["C", "Machine Learning", "Low-level", "No Dependencies"],
+            link: "/projects/custom-ml-lib",
+            overview: "mllib is a simple, efficient, and extensible machine learning library written in pure C. It’s designed for lightweight usage with no external dependencies and provides core functionality like Linear Regression, with plans to support other ML algorithms in the future. Ideal for C developers who want low-level control over ML logic.",
+            features: [
+                "Simple and efficient ML algorithms in pure C",
+                "No external dependencies",
+                "Easy-to-use API via #include \"mllib.h\"",
+                "Open-source and extensible for new ML models"
+            ],
+            links: {
+                github: "https://github.com/Sushrutha05/ML-C-Library"
             }
         }
     ],
@@ -145,5 +197,15 @@ export const SiteConfig = {
             logo: "/logos/pcap-31-03.png",
             verificationLink: "https://verify.pythoninstitute.org/"
         }
+    ],
+
+    badges: [
+        { id: "5b00ca3d-f981-40fb-a841-cc7b24e951e4" },
+        { id: "4b823ab6-7d5e-4703-b88d-e6fc360a5006" },
+        { id: "98462389-0fd0-45be-a619-67a069a08966" },
+        { id: "ca64a94a-8fa7-4e04-aa1f-759130cc2546" },
+        { id: "3f8e2ef5-9432-4e03-b525-93a3d9722b28" },
+        { id: "17ca4ff9-e680-4d35-ac39-e9c74c432b3a" },
+        { id: "cb444099-2b8c-42a7-a7bd-01e1d0a92854" }
     ]
 };

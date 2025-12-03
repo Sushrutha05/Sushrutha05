@@ -30,19 +30,19 @@ const ProjectPage = () => {
                 </motion.div>
             </section>
 
-            <section className="container mx-auto px-6 mb-20">
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    className="relative aspect-video w-full bg-machine-surface border border-white/5 overflow-hidden"
-                >
-                    <img src={project.image} alt={project.title} className="w-full h-full object-contain bg-machine-black/50 opacity-80" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-machine-black via-transparent to-transparent" />
-
-
-                </motion.div>
-            </section>
+            {project.image && (
+                <section className="container mx-auto px-6 mb-20">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className="relative aspect-video w-full bg-machine-surface border border-white/5 overflow-hidden"
+                    >
+                        <img src={project.image} alt={project.title} className="w-full h-full object-contain bg-machine-black/50 opacity-80" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-machine-black via-transparent to-transparent" />
+                    </motion.div>
+                </section>
+            )}
 
             <section className="container mx-auto px-6">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">

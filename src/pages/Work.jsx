@@ -47,19 +47,19 @@ const Work = () => {
                             {/* Project Card */}
                             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
                                 {/* Image Area */}
-                                <div className="lg:col-span-8 relative overflow-hidden bg-machine-surface aspect-video group-hover:border-machine-accent/50 border border-white/5 transition-colors duration-500">
-                                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
-                                    <img
-                                        src={project.image}
-                                        alt={project.title}
-                                        className="w-full h-full object-contain bg-machine-black/50 transform group-hover:scale-105 transition-transform duration-700 ease-out"
-                                    />
-
-
-                                </div>
+                                {project.image && (
+                                    <div className="lg:col-span-8 relative overflow-hidden bg-machine-surface aspect-video group-hover:border-machine-accent/50 border border-white/5 transition-colors duration-500">
+                                        <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
+                                        <img
+                                            src={project.image}
+                                            alt={project.title}
+                                            className="w-full h-full object-contain bg-machine-black/50 transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                                        />
+                                    </div>
+                                )}
 
                                 {/* Details Area */}
-                                <div className="lg:col-span-4 flex flex-col justify-between">
+                                <div className={`${project.image ? 'lg:col-span-4' : 'lg:col-span-12'} flex flex-col justify-between`}>
                                     <div>
                                         <h3 className="text-white font-bold mb-4 uppercase tracking-widest text-sm">Overview</h3>
                                         <p className="text-machine-platinum/60 leading-relaxed mb-8 font-light text-sm">

@@ -68,14 +68,45 @@ const Certifications = () => {
             </section>
 
             <section className="container mx-auto px-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
                     {SiteConfig.certifications.map((cert, index) => (
                         <CertificationCard key={cert.id} cert={cert} index={index} />
                     ))}
                 </div>
+
+                {SiteConfig.badges && SiteConfig.badges.length > 0 && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <h2 className="text-2xl font-display font-bold text-white mb-8 flex items-center gap-3">
+                            <Award className="w-6 h-6 text-machine-accent" />
+                            DIGITAL BADGES
+                        </h2>
+                        <div className="flex flex-wrap gap-6 justify-center">
+                            {SiteConfig.badges.map((badge, index) => (
+                                <div
+                                    key={badge.id}
+                                    data-iframe-width="150"
+                                    data-iframe-height="270"
+                                    data-share-badge-id={badge.id}
+                                    data-share-badge-host="https://www.credly.com"
+                                ></div>
+                            ))}
+                        </div>
+                    </motion.div>
+                )}
             </section>
         </main>
     );
 };
+
+// Load Credly script
+const script = document.createElement('script');
+script.src = "//cdn.credly.com/assets/utilities/embed.js";
+script.async = true;
+document.body.appendChild(script);
 
 export default Certifications;
