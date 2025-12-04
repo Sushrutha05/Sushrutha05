@@ -3,7 +3,7 @@ import emailjs from '@emailjs/browser';
 class EmailService {
     constructor() {
         this.serviceId = 'service_c9q75w2';
-        this.templateId = 'template_svwobdh';
+        this.templateId = 'template_kgf00lj';
         this.publicKey = 'RWVW5Ucp6OD6wT7nR';
         this.isInitialized = false;
     }

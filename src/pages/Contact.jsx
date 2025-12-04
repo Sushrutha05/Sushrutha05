@@ -15,7 +15,7 @@ const Contact = () => {
         e.preventDefault();
         setLoading(true);
         const res = await emailService.sendEmail(formData);
-        setStatus(res.success ? 'Message Transmitted.' : 'Transmission Failed.');
+        setStatus(res.message);
         setLoading(false);
     };
 

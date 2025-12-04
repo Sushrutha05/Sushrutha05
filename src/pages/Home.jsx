@@ -129,23 +129,23 @@ const Home = () => {
                     </motion.div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {SiteConfig.skills.map((category, idx) => (
+                        {Object.entries(SiteConfig.skills).map(([category, skills], idx) => (
                             <motion.div
-                                key={idx}
+                                key={category}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1 }}
                                 className="col-span-1 md:col-span-2"
                             >
-                                <h3 className="text-white font-display font-bold text-xl mb-8 flex items-center gap-3">
+                                <h3 className="text-white font-display font-bold text-xl mb-8 flex items-center gap-3 capitalize">
                                     {idx === 0 ? <Cpu className="text-machine-accent" /> : <Code className="text-machine-accent" />}
-                                    {category.category}
+                                    {category}
                                 </h3>
                                 <div className="grid grid-cols-1 gap-4">
-                                    {category.items.map((skill) => (
-                                        <div key={skill.name} className="group flex items-center justify-between p-4 border border-white/5 bg-machine-surface/50 hover:border-machine-accent/50 transition-colors duration-300">
-                                            <span className="text-machine-platinum font-medium tracking-wide group-hover:text-white transition-colors">{skill.name}</span>
+                                    {skills.map((skill) => (
+                                        <div key={skill} className="group flex items-center justify-between p-4 border border-white/5 bg-machine-surface/50 hover:border-machine-accent/50 transition-colors duration-300">
+                                            <span className="text-machine-platinum font-medium tracking-wide group-hover:text-white transition-colors">{skill}</span>
                                             <div className="w-1.5 h-1.5 bg-machine-accent/50 rounded-full group-hover:bg-machine-accent group-hover:shadow-[0_0_8px_rgba(70,150,255,0.5)] transition-all duration-300" />
                                         </div>
                                     ))}

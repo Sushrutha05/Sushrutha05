@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { SiteConfig } from '../config/site-config';
-import { Award, Shield, CheckCircle } from 'lucide-react';
+import { Award, Shield, CheckCircle, ChevronDown, ChevronUp } from 'lucide-react';
 
 const CertificationCard = ({ cert, index }) => {
     const [imageError, setImageError] = useState(false);
 
     return (
         <motion.div
+            layout
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1, duration: 0.5 }}
+            exit={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.5 }}
             className="h-full"
         >
             <a
@@ -51,6 +53,35 @@ const CertificationCard = ({ cert, index }) => {
 };
 
 const Certifications = () => {
+    const [visibleCount, setVisibleCount] = useState(6);
+
+    useEffect(() => {
+        const script = document.createElement('script');
+        script.src = "//cdn.credly.com/assets/utilities/embed.js";
+        script.async = true;
+        document.body.appendChild(script);
+
+        return () => {
+            if (document.body.contains(script)) {
+                document.body.removeChild(script);
+            }
+        };
+    }, []);
+
+    const displayedCerts = SiteConfig.certifications.slice(0, visibleCount);
+    const isExpanded = visibleCount >= SiteConfig.certifications.length;
+
+    const toggleView = () => {
+        if (isExpanded) {
+            setVisibleCount(6);
+            // Optional: Scroll back to top of grid or keep position? 
+            // Usually better to scroll to top of grid if list was very long, 
+            // but for now let's just collapse.
+        } else {
+            setVisibleCount(SiteConfig.certifications.length);
+        }
+    };
+
     return (
         <main className="min-h-screen pt-32 pb-20">
             <section className="container mx-auto px-6 mb-20">
@@ -68,11 +99,34 @@ const Certifications = () => {
             </section>
 
             <section className="container mx-auto px-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-                    {SiteConfig.certifications.map((cert, index) => (
-                        <CertificationCard key={cert.id} cert={cert} index={index} />
-                    ))}
-                </div>
+                <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <AnimatePresence>
+                        {displayedCerts.map((cert, index) => (
+                            <CertificationCard key={cert.id} cert={cert} index={index} />
+                        ))}
+                    </AnimatePresence>
+                </motion.div>
+
+                {SiteConfig.certifications.length > 6 && (
+                    <div className="flex justify-center mb-20">
+                        <button
+                            onClick={toggleView}
+                            className="group flex items-center gap-2 px-8 py-4 bg-machine-surface border border-white/10 hover:border-machine-accent/50 text-white font-display font-bold tracking-widest uppercase text-sm transition-all duration-300 hover:bg-white/5"
+                        >
+                            {isExpanded ? (
+                                <>
+                                    Show Less
+                                    <ChevronUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform" />
+                                </>
+                            ) : (
+                                <>
+                                    View All Certifications
+                                    <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
+                                </>
+                            )}
+                        </button>
+                    </div>
+                )}
 
                 {SiteConfig.badges && SiteConfig.badges.length > 0 && (
                     <motion.div
@@ -85,15 +139,22 @@ const Certifications = () => {
                             <Award className="w-6 h-6 text-machine-accent" />
                             DIGITAL BADGES
                         </h2>
-                        <div className="flex flex-wrap gap-6 justify-center">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
                             {SiteConfig.badges.map((badge, index) => (
-                                <div
+                                <motion.div
                                     key={badge.id}
-                                    data-iframe-width="150"
-                                    data-iframe-height="270"
-                                    data-share-badge-id={badge.id}
-                                    data-share-badge-host="https://www.credly.com"
-                                ></div>
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    transition={{ delay: index * 0.05, duration: 0.5 }}
+                                    className="bg-zinc-50 border border-zinc-200 p-4 rounded-xl hover:border-machine-accent hover:ring-1 hover:ring-machine-accent/50 transition-all duration-300 shadow-lg hover:shadow-machine-accent/20 hover:-translate-y-1"
+                                >
+                                    <div
+                                        data-iframe-width="150"
+                                        data-iframe-height="270"
+                                        data-share-badge-id={badge.id}
+                                        data-share-badge-host="https://www.credly.com"
+                                    ></div>
+                                </motion.div>
                             ))}
                         </div>
                     </motion.div>
@@ -102,11 +163,5 @@ const Certifications = () => {
         </main>
     );
 };
-
-// Load Credly script
-const script = document.createElement('script');
-script.src = "//cdn.credly.com/assets/utilities/embed.js";
-script.async = true;
-document.body.appendChild(script);
 
 export default Certifications;

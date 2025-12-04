@@ -3,7 +3,7 @@ import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
 export const SiteConfig = {
     metadata: {
         title: "Sushrutha",
-        description: "Portfolio of Sushrutha - Machine Learning Engineer & Developer",
+        description: "Portfolio of Sushrutha - Computer Science Engineer & Developer",
         author: "Sushrutha",
         siteUrl: "https://sushrutha.dev",
     },
@@ -15,9 +15,9 @@ export const SiteConfig = {
 
     social: {
         github: "https://github.com/Sushrutha05",
-        linkedin: "https://www.linkedin.com/in/sushrutha-r-a01049257/",
+        linkedin: "https://www.linkedin.com/in/sushrutha-nayak-528775293",
         email: "mailto:sushruthar05@gmail.com",
-        twitter: "https://x.com/Sushrutha_05"
+
     },
 
     navigation: [
@@ -73,7 +73,7 @@ export const SiteConfig = {
                 "Secure template storage"
             ],
             links: {
-                github: "https://github.com/Sushrutha05/Fingerprint-Recognition"
+                github: "https://github.com/Sushrutha05/FingerSense"
             }
         },
         {
@@ -171,31 +171,157 @@ export const SiteConfig = {
 
     certifications: [
         {
-            title: "AWS Cloud Practitioner",
-            issuer: "Amazon Web Services",
-            year: "2024",
-            id: "AWS-CP",
-            type: "Cloud Infrastructure",
-            logo: "/logos/aws-cp.png",
-            verificationLink: "https://www.credly.com/badges/your-badge-id"
+            title: "Certified in Cybersecurity (CC)",
+            issuer: "ISC2",
+            year: "2025",
+            id: "ISC2-CC",
+            type: "Cybersecurity",
+            logo: "/certifications/isc2-cc.png",
+            verificationLink: "/certifications/isc2-cc.png"
         },
         {
-            title: "Google Cloud Digital Leader",
-            issuer: "Google Cloud",
-            year: "2024",
-            id: "GCP-DL",
-            type: "Cloud Strategy",
-            logo: "/logos/gcp-dl.png",
-            verificationLink: "https://www.credly.com/badges/your-badge-id"
+            title: "Introduction to CIP",
+            issuer: "OPSWAT",
+            year: "2025",
+            id: "OPSWAT-CIP",
+            type: "Cybersecurity",
+            logo: "/certifications/opswat-cip.png",
+            verificationLink: "https://learn.opswatacademy.com/certificate/VZO8NRrayA"
         },
         {
-            title: "PCAP – Python Associate",
-            issuer: "Python Institute",
-            year: "2024",
-            id: "PCAP-31-03",
+            title: "JavaScript Essentials 1",
+            issuer: "Cisco Networking Academy",
+            year: "2025",
+            id: "CISCO-JSE1",
             type: "Language Proficiency",
-            logo: "/logos/pcap-31-03.png",
-            verificationLink: "https://verify.pythoninstitute.org/"
+            logo: "/certifications/cisco-js-essentials.png",
+            verificationLink: "https://www.credly.com/badges/98462389-0fd0-45be-a619-67a069a08966/linked_in_profile"
+        },
+        {
+            title: "Machine Learning with Python",
+            issuer: "Udemy",
+            year: "2025",
+            id: "UDEMY-ML",
+            type: "Machine Learning",
+            logo: "/certifications/udemy-ml-python.png",
+            verificationLink: "https://www.udemy.com/certificate/UC-ea3af07d-7116-433f-b2e2-7b8554efc0d6/"
+        },
+        {
+            title: "Complete Git and Github Course",
+            issuer: "Geekster",
+            year: "2025",
+            id: "GEEKSTER-GIT",
+            type: "Version Control",
+            logo: "/certifications/geekster-git.png",
+            verificationLink: "/certifications/geekster-git.png"
+        },
+        {
+            title: "HTML & CSS Bootcamp",
+            issuer: "LetsUpgrade",
+            year: "2024",
+            id: "LU-HTML-OCT",
+            type: "Web Development",
+            logo: "/certifications/letsupgrade-html-css-oct.png",
+            verificationLink: "https://verify.letsupgrade.in/certificate/LUEHTMLOCT1241189"
+        },
+        {
+            title: "HTML & CSS Bootcamp",
+            issuer: "LetsUpgrade",
+            year: "2024",
+            id: "LU-HTML-SEP",
+            type: "Web Development",
+            logo: "/certifications/letsupgrade-html-css-sep.png",
+            verificationLink: "https://verify.letsupgrade.in/certificate/LUEHTMLSEP1241473"
+        },
+        {
+            title: "Statistics for R Programming",
+            issuer: "Infosys Springboard",
+            year: "2024",
+            id: "INFOSYS-STATS-R",
+            type: "Data Science",
+            logo: "/certifications/infosys-stats-r.png",
+            verificationLink: "/certifications/infosys-stats-r.png"
+        },
+        {
+            title: "Introduction to R Programming",
+            issuer: "Infosys Springboard",
+            year: "2024",
+            id: "INFOSYS-INTRO-R",
+            type: "Data Science",
+            logo: "/certifications/infosys-intro-r.png",
+            verificationLink: "/certifications/infosys-intro-r.png"
+        },
+        {
+            title: "Introduction to Artificial Intelligence",
+            issuer: "Infosys Springboard",
+            year: "2024",
+            id: "INFOSYS-INTRO-AI",
+            type: "Artificial Intelligence",
+            logo: "/certifications/infosys-intro-ai.png",
+            verificationLink: "/certifications/infosys-intro-ai.png"
+        },
+        {
+            title: "Python (Basic)",
+            issuer: "HackerRank",
+            year: "2024",
+            id: "HACKERRANK-PYTHON",
+            type: "Language Proficiency",
+            logo: "/certifications/hackerrank-python-basic.png",
+            verificationLink: "/certifications/hackerrank-python-basic.png"
+        },
+        {
+            title: "Prompt Engineering for ChatGPT",
+            issuer: "Great Learning",
+            year: "2024",
+            id: "GL-PROMPT-ENG",
+            type: "AI Engineering",
+            logo: "/certifications/gl-prompt-engineering.png",
+            verificationLink: "/certifications/gl-prompt-engineering.png"
+        },
+        {
+            title: "Front End Development - HTML",
+            issuer: "Great Learning",
+            year: "2024",
+            id: "GL-FRONTEND-HTML",
+            type: "Web Development",
+            logo: "/certifications/gl-frontend-html.png",
+            verificationLink: "/certifications/gl-frontend-html.png"
+        },
+        {
+            title: "UI/UX for Beginners",
+            issuer: "Great Learning",
+            year: "2024",
+            id: "GL-UIUX",
+            type: "Design",
+            logo: "/certifications/gl-uiux.png",
+            verificationLink: "/certifications/gl-uiux.png"
+        },
+        {
+            title: "Introduction to Scikit Learn",
+            issuer: "Great Learning",
+            year: "2024",
+            id: "GL-SCIKIT-LEARN",
+            type: "Machine Learning",
+            logo: "/certifications/gl-scikit-learn.png",
+            verificationLink: "/certifications/gl-scikit-learn.png"
+        },
+        {
+            title: "OpenCV BootCamp",
+            issuer: "OpenCV University",
+            year: "2024",
+            id: "OPENCV-BOOTCAMP",
+            type: "Computer Vision",
+            logo: "/certifications/opencv-bootcamp.png",
+            verificationLink: "/certifications/opencv-bootcamp.png"
+        },
+        {
+            title: "Python for Beginners",
+            issuer: "OpenCV University",
+            year: "2024",
+            id: "OPENCV-PYTHON",
+            type: "Language Proficiency",
+            logo: "/certifications/opencv-python.png",
+            verificationLink: "/certifications/opencv-python.png"
         }
     ],
 
