@@ -5,7 +5,7 @@ export const SiteConfig = {
         title: "Sushrutha",
         description: "Portfolio of Sushrutha - Computer Science Engineer & Developer",
         author: "Sushrutha",
-        siteUrl: "https://sushrutha.dev",
+        siteUrl: "https://sushrutha05.vercel.app/",
     },
 
     site: {
