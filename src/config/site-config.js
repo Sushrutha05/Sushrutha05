@@ -171,6 +171,60 @@ export const SiteConfig = {
 
     certifications: [
         {
+            title: "Database Management Essentials",
+            issuer: "Coursera",
+            year: "2025",
+            id: "Coursera-DB",
+            type: "Database",
+            logo: "/certifications/coursera-database-management-essentials.png",
+            verificationLink: "https://coursera.org/verify/YQIEW90HTPHZ"
+        },
+        {
+            title: "AI Infrastructure And Operational Fundamentals",
+            issuer: "Coursera",
+            year: "2025",
+            id: "Coursera-AI",
+            type: "AI",
+            logo: "/certifications/coursera-ai-infrastructure-and-operational-fundamentals.png",
+            verificationLink: "https://coursera.org/verify/X6RRP2D8A108"
+        },
+        {
+            title: "Introduction To SQL for Big Query And Cloud SQL",
+            issuer: "Coursera",
+            year: "2025",
+            id: "Coursera-SQL",
+            type: "SQL",
+            logo: "/certifications/coursera-introduction-to-sql-for-bigquery-and-cloud-sql.png",
+            verificationLink: "https://coursera.org/verify/ZXHTGUTU41LH"
+        },
+        {
+            title: "Introduction To Git And Github",
+            issuer: "Coursera",
+            year: "2025",
+            id: "Coursera-Git",
+            type: "Git",
+            logo: "/certifications/coursera-introduction-to-git-and-github.png",
+            verificationLink: "https://coursera.org/verify/S7ZEHBRXPGMX"
+        },
+        {
+            title: "Developing with GitHub Copilot and VS Code",
+            issuer: "Coursera",
+            year: "2025",
+            id: "Coursera-Copilot",
+            type: "Copilot",
+            logo: "/certifications/coursera-developing-with-github-copilot-and-vs-code.png",
+            verificationLink: "https://coursera.org/verify/S87ONUO7YGMW"
+        },
+        {
+            title: "Introduction to Responsible AI",
+            issuer: "Coursera",
+            year: "2025",
+            id: "Coursera-Responsible-AI",
+            type: "AI",
+            logo: "/certifications/coursera-introduction-to-responsible-ai.png",
+            verificationLink: "https://coursera.org/verify/I391YXL86A25"
+        },
+        {
             title: "Certified in Cybersecurity (CC)",
             issuer: "ISC2",
             year: "2025",
