@@ -29,8 +29,8 @@ export const SiteConfig = {
 
     skills: {
         expert: ["Python", "Machine Learning", "Data Analysis", "React", "C"],
-        proficient: ["Java", "SQL", "Git", "TensorFlow", "Scikit-Learn"],
-        familiar: ["Docker", "AWS", "C++", "Flutter"]
+        proficient: ["Docker", "Java", "SQL", "Git", "TensorFlow", "Scikit-Learn"],
+        familiar: ["AWS", "C++", "Flutter"]
     },
 
     projects: [
@@ -170,6 +170,15 @@ export const SiteConfig = {
     ],
 
     certifications: [
+        {
+            title: "Docker:A Project-Based Approach To Learning",
+            issuer: "Udemy",
+            year: "2025",
+            id: "Udemy-DO",
+            type: "DevOps",
+            logo: "/certifications/udemy-docker-a-project-based-approach-to-learning.png",
+            verificationLink: "https://www.udemy.com/certificate/UC-2c9c4f33-3bde-4850-9280-e182ae2b9c1c/"
+        },
         {
             title: "Database Management Essentials",
             issuer: "Coursera",
@@ -381,7 +390,6 @@ export const SiteConfig = {
 
     badges: [
         { id: "5b00ca3d-f981-40fb-a841-cc7b24e951e4" },
-        { id: "4b823ab6-7d5e-4703-b88d-e6fc360a5006" },
         { id: "98462389-0fd0-45be-a619-67a069a08966" },
         { id: "ca64a94a-8fa7-4e04-aa1f-759130cc2546" },
         { id: "3f8e2ef5-9432-4e03-b525-93a3d9722b28" },
