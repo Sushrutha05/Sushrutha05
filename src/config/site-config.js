@@ -17,7 +17,6 @@ export const SiteConfig = {
         github: "https://github.com/Sushrutha05",
         linkedin: "https://www.linkedin.com/in/sushrutha-nayak-528775293",
         email: "mailto:sushruthar05@gmail.com",
-
     },
 
     navigation: [
@@ -42,7 +41,10 @@ export const SiteConfig = {
             image: "/leetgitbot/image.png",
             tags: ["Python", "Discord API", "Automation", "REST APIs", "Developer Productivity"],
             link: "/projects/leetgitbot",
-            overview: "LeetGitBot is a productivity-focused Discord bot that integrates LeetCode and GitHub data to provide real-time coding progress updates inside developer communities. It helps teams and student groups maintain consistency by transforming individual coding effort into visible, shared progress.",
+            problem: "Developers often struggle to maintain consistency in daily coding practice and lack a unified, social way to track progress across different platforms like LeetCode and GitHub.",
+            solution: "I engineered a Discord bot that bridges this gap by automating the retrieval and broadcasting of coding metrics. It creates a feedback loop of accountability by visualizing daily achievements within the community.",
+            architecture: "Built with Python and discord.py, the bot interfaces with LeetCode's GraphQL API and GitHub's REST API. It uses a polling mechanism to fetch updates and maintains a local database for user mapping and streak tracking.",
+            outcome: "The bot successfully drives engagement in developer communities, transforming individual coding efforts into a shared, gamified experience that encourages consistency.",
             features: [
                 "Automated retrieval of LeetCode statistics via APIs",
                 "Real-time progress updates posted to Discord channels",
@@ -62,7 +64,10 @@ export const SiteConfig = {
             image: "/naadswar/image.png",
             tags: ["Signal Processing", "Flutter", "Real-time Audio"],
             link: "/projects/naadswar",
-            overview: "NaadSwar is a minimal, real-time pitch detection app built for Indian classical musicians. It listens to your voice or instrument and maps the detected pitch to the closest swar — covering all three saptaks (Mandra, Madhya, Taar) and all note types (Shuddh, Komal, and Teevra). Perfect for vocalists, bansuri players, and anyone practicing pitch precision. ",
+            problem: "Indian Classical Music relies on precise microtones (Shrutis) that standard Western tuners fail to capture accurately. Musicians need a tool that understands the nuances of the varying saptaks and note types.",
+            solution: "NaadSwar is a Flutter-based mobile application designed specifically for this context. It performs real-time pitch detection and maps frequencies to the closest Swar, supporting all three octaves (Mandra, Madhya, Taar).",
+            architecture: "The app leverages Flutter for a high-performance cross-platform UI. Under the hood, it utilizes native audio processing libraries to perform Fast Fourier Transform (FFT) on microphone input, converting raw audio signals into precise frequency data in real-time.",
+            outcome: "A minimal, low-latency tool that provides vocalists and instrumentalists with immediate, accurate visual feedback, aiding in the perfection of intonation.",
             features: [
                 "Live microphone input",
                 "Debug Settings Screen with adjustable Gain, History Size, and Buffer Size",
@@ -85,7 +90,10 @@ export const SiteConfig = {
             image: "/fingersense/FingerSenseDemo.png",
             tags: ["Computer Vision", "Python", "OpenCV", "MediaPipe", "HCI"],
             link: "/projects/fingersense",
-            overview: "FingerSense is a real-time computer vision system that detects specific finger gestures using hand landmark analysis and applies localized Gaussian blur for automatic visual censorship. The system focuses on gesture intent recognition rather than simple hand detection, using temporal voting to reduce false positives and ensure stable output even under partial occlusion or rapid movement.",
+            problem: "Automated content moderation in live video feeds is challenging, particularly when it comes to detecting and censoring specific, offensive gestures in real-time without false positives.",
+            solution: "FingerSense is a computer vision system that identifies offensive hand gestures and applies localized censorship. It focuses on intent recognition rather than just shape matching to ensure accuracy.",
+            architecture: "The system uses Python, OpenCV, and MediaPipe for hand landmark detection. It implements a custom logic layer that analyzes the relative positions of finger landmarks and uses temporal voting to stabilize detections across video frames.",
+            outcome: "A robust, real-time censorship tool that effectively blurs offensive gestures while handling motion blur and partial occlusions, suitable for live streaming applications.",
             features: [
                 "Finger-level landmark analysis using MediaPipe",
                 "Middle-finger gesture detection logic",
@@ -105,7 +113,10 @@ export const SiteConfig = {
             image: "/tabkeep/screenshot.png",
             tags: ["JavaScript", "Chrome API", "Productivity"],
             link: "/projects/tabkeep",
-            overview: "TabKeep is a productivity-focused Chrome extension that helps users manage their browser tabs efficiently. It allows users to save groups of tabs, suspend inactive tabs to save memory, and quickly restore sessions. It's designed to reduce browser clutter and improve system performance.",
+            problem: "Modern workflows often lead to an explosion of open browser tabs, causing high memory usage, system slowdowns, and cognitive overload for the user.",
+            solution: "TabKeep is a Chrome extension designed to declutter the browser. It allows users to save active sessions, suspend inactive tabs to free up RAM, and organize their digital workspace.",
+            architecture: "Built with JavaScript and the Chrome Extensions API, it interacts with the `tabs`, `storage`, and `alarms` permissions to manage tab states and persist session data locally.",
+            outcome: "Significantly improved browser performance and user focus by reducing memory footprint and providing a structured way to manage browsing sessions.",
             features: [
                 "Save and restore tab sessions",
                 "Auto-suspend inactive tabs",
@@ -124,7 +135,10 @@ export const SiteConfig = {
             image: "/texttopdf/texttopdf.png",
             tags: ["Python", "File Processing", "Automation"],
             link: "/projects/text-to-pdf",
-            overview: "TextToPDF is a simple yet powerful utility for converting text files into professional-looking PDF documents. It supports custom fonts, page numbering, and margin adjustments. It's ideal for automating report generation or archiving text data.",
+            problem: "Converting simple text files into professional, printable PDF documents often requires heavy word processing software or manual formatting, which is inefficient for batch operations.",
+            solution: "TextToPDF is a lightweight desktop utility that automates this conversion. It provides a simple interface to convert text files while handling pagination, fonts, and margins automatically.",
+            architecture: "Written in Python, the tool uses the FPDF library for PDF generation. It parses text input and renders it onto PDF pages, handling layout calculations dynamically.",
+            outcome: "A streamlined, standalone executable that simplifies document archiving and report generation for users who deal with raw text data.",
             features: [
                 "Batch processing of text files",
                 "Customizable font and layout settings",
@@ -142,7 +156,10 @@ export const SiteConfig = {
             description: "Predicting customer churn in the telecom industry using machine learning models.",
             tags: ["Python", "Scikit-Learn", "Data Analysis", "EDA"],
             link: "/projects/telco-churn",
-            overview: "This project focuses on predicting customer churn using the Telco Customer Churn dataset. It analyzes customer behavior and service usage patterns to determine the likelihood of a customer leaving their telecom provider. The goal is to build a robust machine learning pipeline for classification and pattern discovery.",
+            problem: "Customer churn is a critical issue for telecom providers, directly impacting revenue. Identifying at-risk customers before they leave is essential for retention strategies.",
+            solution: "I developed a machine learning pipeline to analyze customer behavior and predict the likelihood of churn. This enables proactive intervention.",
+            architecture: "The project uses a Python data science stack (Pandas, Scikit-Learn). It involves a comprehensive pipeline: data cleaning, exploratory data analysis (EDA), feature engineering, and the training of ensemble models like Random Forest and XGBoost.",
+            outcome: "The model provides actionable insights into the key drivers of churn and delivers accurate predictions, allowing businesses to target retention efforts effectively.",
             features: [
                 "Data Preprocessing: Handling missing values, encoding categorical variables, feature scaling",
                 "Exploratory Data Analysis (EDA): Analyzing churn distribution, feature correlations, and patterns",
@@ -160,7 +177,10 @@ export const SiteConfig = {
             description: "Comparing various ML models on the classic Iris dataset.",
             tags: ["Python", "Scikit-Learn", "Classification", "Regression"],
             link: "/projects/iris-ml-model",
-            overview: "This project explores a variety of machine learning models applied to the classic Iris dataset. While the dataset is inherently a classification problem, both classification and regression models were implemented to deepen understanding of their behavior, performance, and use cases.",
+            problem: "For students and practitioners, understanding the practical trade-offs between different machine learning algorithms can be abstract without direct comparison.",
+            solution: "This project serves as a rigorous benchmark study, implementing and comparing multiple classification and regression algorithms on the standard Iris dataset.",
+            architecture: "Implemented in Python using Scikit-Learn, the project systematically trains and evaluates models like KNN, Logistic Regression, SVM, and Decision Trees, logging performance metrics for comparison.",
+            outcome: "A clear, empirical demonstration of how different algorithms perform on the same data, providing a reference for model selection and behavior.",
             features: [
                 "Classification Models: KNN, Logistic Regression, Decision Tree, SVC",
                 "Regression Models: KNN, Linear, Decision Tree, SVR",
@@ -177,7 +197,10 @@ export const SiteConfig = {
             description: "A lightweight and extensible ML library written in pure C.",
             tags: ["C", "Machine Learning", "Low-level", "No Dependencies"],
             link: "/projects/custom-ml-lib",
-            overview: "mllib is a simple, efficient, and extensible machine learning library written in pure C. It’s designed for lightweight usage with no external dependencies and provides core functionality like Linear Regression, with plans to support other ML algorithms in the future. Ideal for C developers who want low-level control over ML logic.",
+            problem: "High-level libraries like TensorFlow or Scikit-Learn abstract away the mathematical foundations of machine learning, making it difficult to grasp the low-level mechanics.",
+            solution: "mllib is a custom-built machine learning library written in pure C. It implements core algorithms from scratch without external dependencies, prioritizing educational clarity and efficiency.",
+            architecture: "The library is architected around a custom matrix operations engine. It implements algorithms like Linear Regression using Gradient Descent, managing memory manually for maximum performance.",
+            outcome: "A highly efficient, portable library that demonstrates the internal workings of ML algorithms and serves as a solid foundation for embedded ML applications.",
             features: [
                 "Simple and efficient ML algorithms in pure C",
                 "No external dependencies",

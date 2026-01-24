@@ -60,20 +60,55 @@ const ProjectPage = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
+                            className="space-y-12"
                         >
-                            <h2 className="text-2xl font-display font-bold text-white mb-6">ENGINEERING OVERVIEW</h2>
-                            <p className="text-machine-platinum/80 text-lg leading-relaxed font-light mb-12">
-                                {project.overview}
-                            </p>
+                            {/* Problem & Solution */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div>
+                                    <h2 className="text-sm font-bold text-machine-accent uppercase tracking-widest mb-4">The Challenge</h2>
+                                    <p className="text-machine-platinum/80 text-lg leading-relaxed font-light">
+                                        {project.problem || project.overview}
+                                    </p>
+                                </div>
+                                <div>
+                                    <h2 className="text-sm font-bold text-machine-accent uppercase tracking-widest mb-4">The Solution</h2>
+                                    <p className="text-machine-platinum/80 text-lg leading-relaxed font-light">
+                                        {project.solution}
+                                    </p>
+                                </div>
+                            </div>
 
-                            <h3 className="text-xl font-display font-bold text-white mb-6">KEY CAPABILITIES</h3>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                {project.features.map((feature) => (
-                                    <div key={feature} className="flex items-start gap-3 p-4 border border-white/5 bg-machine-surface/50">
-                                        <CheckCircle className="w-5 h-5 text-machine-accent shrink-0" />
-                                        <span className="text-machine-platinum text-sm">{feature}</span>
-                                    </div>
-                                ))}
+                            {/* Architecture */}
+                            {project.architecture && (
+                                <div>
+                                    <h2 className="text-sm font-bold text-machine-accent uppercase tracking-widest mb-4">System Architecture</h2>
+                                    <p className="text-machine-platinum/80 text-lg leading-relaxed font-light border-l-2 border-white/10 pl-6">
+                                        {project.architecture}
+                                    </p>
+                                </div>
+                            )}
+
+                            {/* Outcome */}
+                            {project.outcome && (
+                                <div>
+                                    <h2 className="text-sm font-bold text-machine-accent uppercase tracking-widest mb-4">Impact & Outcome</h2>
+                                    <p className="text-machine-platinum/80 text-lg leading-relaxed font-light">
+                                        {project.outcome}
+                                    </p>
+                                </div>
+                            )}
+
+                            {/* Key Features */}
+                            <div>
+                                <h3 className="text-xl font-display font-bold text-white mb-6">KEY CAPABILITIES</h3>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    {project.features.map((feature) => (
+                                        <div key={feature} className="flex items-start gap-3 p-4 border border-white/5 bg-machine-surface/50">
+                                            <CheckCircle className="w-5 h-5 text-machine-accent shrink-0" />
+                                            <span className="text-machine-platinum text-sm">{feature}</span>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </motion.div>
                     </div>
