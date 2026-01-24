@@ -35,6 +35,26 @@ export const SiteConfig = {
 
     projects: [
         {
+            id: "leetgitbot",
+            title: "LeetGitBot",
+            subtitle: "Automated Coding Progress Tracking for Discord Communities",
+            description: "A Discord bot that automates LeetCode progress tracking and GitHub activity updates to encourage consistent problem-solving and peer accountability.",
+            image: "/leetgitbot/image.png",
+            tags: ["Python", "Discord API", "Automation", "REST APIs", "Developer Productivity"],
+            link: "/projects/leetgitbot",
+            overview: "LeetGitBot is a productivity-focused Discord bot that integrates LeetCode and GitHub data to provide real-time coding progress updates inside developer communities. It helps teams and student groups maintain consistency by transforming individual coding effort into visible, shared progress.",
+            features: [
+                "Automated retrieval of LeetCode statistics via APIs",
+                "Real-time progress updates posted to Discord channels",
+                "GitHub activity integration to reflect coding consistency",
+                "Command-based controls for users and servers",
+                "Designed for low-latency, scalable community use"
+            ],
+            links: {
+                github: "https://github.com/Sushrutha05/LeetGitBot"
+            }
+        },
+        {
             id: "naadswar",
             title: "NaadSwar",
             subtitle: "Acoustic Analysis Engine",
@@ -60,17 +80,18 @@ export const SiteConfig = {
         {
             id: "fingersense",
             title: "FingerSense",
-            subtitle: "Biometric Authentication System",
-            description: "High-precision fingerprint recognition algorithm using minutiae extraction.",
+            subtitle: "Real-Time Gesture Intent Detection System",
+            description: "Real-time detection of offensive hand gestures with adaptive blur-based censorship using computer vision.",
             image: "/fingersense/FingerSenseDemo.png",
-            tags: ["Computer Vision", "Python", "Biometrics"],
+            tags: ["Computer Vision", "Python", "OpenCV", "MediaPipe", "HCI"],
             link: "/projects/fingersense",
-            overview: "FingerSense is a biometric authentication system designed for high security and accuracy. It utilizes advanced image processing techniques to extract minutiae points from fingerprint images, creating a unique digital signature for each user. The system is robust against rotation and partial occlusion.",
+            overview: "FingerSense is a real-time computer vision system that detects specific finger gestures using hand landmark analysis and applies localized Gaussian blur for automatic visual censorship. The system focuses on gesture intent recognition rather than simple hand detection, using temporal voting to reduce false positives and ensure stable output even under partial occlusion or rapid movement.",
             features: [
-                "Minutiae extraction (ridge endings and bifurcations)",
-                "Image enhancement and binarization",
-                "Fast matching algorithm",
-                "Secure template storage"
+                "Finger-level landmark analysis using MediaPipe",
+                "Middle-finger gesture detection logic",
+                "Temporal voting to reduce flicker and false positives",
+                "Localized Gaussian blur for real-time censorship",
+                "Graceful handling of hand entry and exit from frame"
             ],
             links: {
                 github: "https://github.com/Sushrutha05/FingerSense"
