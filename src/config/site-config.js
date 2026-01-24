@@ -113,7 +113,7 @@ export const SiteConfig = {
                 "Dark mode support"
             ],
             links: {
-                github: "https://github.com/Sushrutha05/Tab-Manager"
+                github: "https://github.com/Sushrutha05/TabKeep"
             }
         },
         {
