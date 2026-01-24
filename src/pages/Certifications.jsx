@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SiteConfig } from '../config/site-config';
 import { Award, Shield, CheckCircle, ChevronDown, ChevronUp } from 'lucide-react';
+import SEO from '../components/seo/SEO';
 
 const CertificationCard = ({ cert, index }) => {
     const [imageError, setImageError] = useState(false);
 
     return (
-        <motion.div
+        <motion.article
             layout
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -48,7 +49,7 @@ const CertificationCard = ({ cert, index }) => {
                     <span className="text-white font-mono text-xs">{cert.year}</span>
                 </div>
             </a>
-        </motion.div>
+        </motion.article>
     );
 };
 
@@ -84,6 +85,11 @@ const Certifications = () => {
 
     return (
         <main className="min-h-screen pt-32 pb-20">
+            <SEO
+                title="Certifications"
+                description="Verified certifications and credentials in Machine Learning, Cloud Computing, and Software Development."
+                keywords="certifications, credentials, machine learning, cloud computing, software development"
+            />
             <section className="container mx-auto px-6 mb-20">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

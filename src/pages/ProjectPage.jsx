@@ -3,6 +3,7 @@ import { useParams, Navigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { SiteConfig } from '../config/site-config';
 import { ArrowLeft, CheckCircle, Layers, Cpu, Github, ExternalLink, Download } from 'lucide-react';
+import SEO from '../components/seo/SEO';
 
 const ProjectPage = () => {
     const { id } = useParams();
@@ -14,6 +15,13 @@ const ProjectPage = () => {
 
     return (
         <main className="min-h-screen pt-32 pb-20">
+            <SEO
+                title={project.title}
+                description={project.description}
+                keywords={project.tags.join(', ')}
+                image={project.image}
+                url={project.link}
+            />
             <section className="container mx-auto px-6 mb-12">
                 <Link to="/work" className="inline-flex items-center gap-2 text-machine-platinum/60 hover:text-white transition-colors text-xs uppercase tracking-widest mb-8">
                     <ArrowLeft className="w-4 h-4" /> Back to Projects

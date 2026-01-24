@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { SiteConfig } from '../config/site-config';
 import { Mail, Linkedin, Github, ArrowRight } from 'lucide-react';
 import { emailService } from '../utils/emailService';
+import SEO from '../components/seo/SEO';
 
 const Contact = () => {
     const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
@@ -21,6 +22,11 @@ const Contact = () => {
 
     return (
         <main className="min-h-screen pt-32 pb-20">
+            <SEO
+                title="Contact"
+                description="Get in touch with Sushrutha for engineering collaborations, technical consultation, or project inquiries."
+                keywords="contact, email, linkedin, github, collaboration, hiring"
+            />
             <section className="container mx-auto px-6">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
                     {/* Left Column: Info */}

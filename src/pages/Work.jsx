@@ -3,10 +3,16 @@ import { motion } from 'framer-motion';
 import { SiteConfig } from '../config/site-config';
 import { ArrowUpRight, Layers, Zap, Database } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/seo/SEO';
 
 const Work = () => {
     return (
         <main className="min-h-screen pt-32 pb-20">
+            <SEO
+                title="Work"
+                description="Explore Sushrutha's portfolio of engineering projects, including machine learning models, full-stack applications, and system designs."
+                keywords="projects, software engineering, portfolio, machine learning, web development"
+            />
             <section className="container mx-auto px-6 mb-20">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -24,7 +30,7 @@ const Work = () => {
             <section className="container mx-auto px-6">
                 <div className="space-y-32">
                     {SiteConfig.projects.map((project, index) => (
-                        <motion.div
+                        <motion.article
                             key={project.id}
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -81,7 +87,7 @@ const Work = () => {
                                     </Link>
                                 </div>
                             </div>
-                        </motion.div>
+                        </motion.article>
                     ))}
                 </div>
             </section>
