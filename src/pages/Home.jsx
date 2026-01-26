@@ -31,13 +31,11 @@ const Home = () => {
             />
             {/* Hero Section */}
             <section className="container mx-auto px-6 mb-32 relative">
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-machine-accent/5 to-transparent pointer-events-none opacity-20" />
-                <img
-                    src="/mobile-hero.png"
-                    className="absolute inset-0 w-full h-full object-cover md:hidden -z-10 opacity-60"
-                    alt="Background"
-                    fetchPriority="high"
-                />
+                {/* Unified Background: Radial Gradient */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,var(--color-machine-accent)_0%,transparent_40%)] opacity-20 pointer-events-none -z-10" />
+
+                {/* Desktop-only: Tech Grid Pattern */}
+                <div className="hidden md:block absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none -z-10" />
 
                 <m.div
                     initial="hidden"
