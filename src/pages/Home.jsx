@@ -32,10 +32,10 @@ const Home = () => {
             {/* Hero Section */}
             <section className="container mx-auto px-6 mb-32 relative">
                 {/* Unified Background: Radial Gradient */}
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,var(--color-machine-accent)_0%,transparent_40%)] opacity-20 pointer-events-none -z-10" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.25)_0%,rgba(56,189,248,0.12)_30%,transparent_65%)] opacity-20 pointer-events-none -z-10" />
 
                 {/* Desktop-only: Tech Grid Pattern */}
-                <div className="hidden md:block absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none -z-10" />
+                <div className="hidden md:block absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%, rgba(0,0,0,1)_60%,rgba(0,0,0,0.6)_80%, transparent_100%)] pointer-events-none -z-10" />
 
                 <m.div
                     initial="hidden"
