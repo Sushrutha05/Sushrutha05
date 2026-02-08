@@ -217,7 +217,7 @@ export const SiteConfig = {
         {
             title: "Docker:A Project-Based Approach To Learning",
             issuer: "Udemy",
-            year: "2025",
+            year: "2026",
             id: "Udemy-DO",
             type: "DevOps",
             logo: "/certifications/udemy-docker-a-project-based-approach-to-learning.png",
