@@ -6,7 +6,7 @@ const SEO = ({ title, description, keywords, image, url }) => {
     const siteTitle = SiteConfig.metadata.title;
     const metaTitle = title ? `${title} | ${siteTitle}` : siteTitle;
     const metaDescription = description || SiteConfig.metadata.description;
-    const metaKeywords = keywords || "software engineer, developer, portfolio, computer science";
+    const metaKeywords = keywords || "software engineer, developer, portfolio, computer science, Sushrutha, Sushrutha05, Sushrutha Nayak, intern";
     const metaImage = image ? `${SiteConfig.metadata.siteUrl}${image}` : `${SiteConfig.metadata.siteUrl}/og-image.png`;
     const metaUrl = url ? `${SiteConfig.metadata.siteUrl}${url}` : SiteConfig.metadata.siteUrl;
 

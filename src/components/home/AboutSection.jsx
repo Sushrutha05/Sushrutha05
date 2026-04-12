@@ -15,7 +15,7 @@ const AboutSection = () => {
                 >
                     <div className="aspect-[4/5] w-full max-w-xs bg-machine-surface rounded-sm overflow-hidden relative group">
                         <div className="absolute inset-0 bg-gradient-to-t from-machine-black via-transparent to-transparent z-10" />
-                        <img src="/headshot.png" alt="Profile" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
+                        <img src="/headshot.png" alt="Profile" className="w-full h-full object-cover" />
                         <div className="absolute bottom-0 left-0 w-full p-6 z-20">
                             <div className="h-[1px] w-8 bg-machine-accent mb-2" />
                             <p className="text-white font-display font-bold text-xl tracking-wide">SUSHRUTHA NAYAK</p>
