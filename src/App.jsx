@@ -12,6 +12,8 @@ const Work = React.lazy(() => import('./pages/Work'));
 const Certifications = React.lazy(() => import('./pages/Certifications'));
 const Contact = React.lazy(() => import('./pages/Contact'));
 const ProjectPage = React.lazy(() => import('./pages/ProjectPage'));
+const NaadSwarPremium = React.lazy(() => import('./pages/NaadSwarPremium'));
+const NexusModular = React.lazy(() => import('./pages/NexusModular'));
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -22,48 +24,55 @@ const ScrollToTop = () => {
   return null;
 };
 
-function App() {
+const MainContent = () => {
+  const { pathname } = useLocation();
+  const isPremiumPage = pathname === '/naadswar-premium' || pathname === '/nexus-modular';
   const [mountEffects, setMountEffects] = useState(false);
 
   useEffect(() => {
-    // Check if device is mobile (using 768px as breakpoint)
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
-
-    // Only mount effects on desktop after delay
     if (!isMobile) {
       const timer = setTimeout(() => {
         setMountEffects(true);
       }, 1200);
-
       return () => clearTimeout(timer);
     }
   }, []);
 
   return (
+    <div className="antialiased overflow-x-hidden min-h-screen">
+      {mountEffects && (
+        <Suspense fallback={null}>
+          <ParticleCanvas />
+          <CursorGlow />
+        </Suspense>
+      )}
+      
+      {!isPremiumPage && <Header />}
+
+      <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-machine-accent">Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/work" element={<Work />} />
+          <Route path="/certifications" element={<Certifications />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/projects/:id" element={<ProjectPage />} />
+          <Route path="/naadswar-premium" element={<NaadSwarPremium />} />
+          <Route path="/nexus-modular" element={<NexusModular />} />
+        </Routes>
+      </Suspense>
+
+      {!isPremiumPage && <Footer />}
+    </div>
+  );
+};
+
+function App() {
+  return (
     <Router>
       <ScrollToTop />
       <LazyMotion features={domAnimation} strict>
-        <div className="antialiased overflow-x-hidden min-h-screen">
-          {mountEffects && (
-            <Suspense fallback={null}>
-              <ParticleCanvas />
-              <CursorGlow />
-            </Suspense>
-          )}
-          <Header />
-
-          <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-machine-accent">Loading...</div>}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/work" element={<Work />} />
-              <Route path="/certifications" element={<Certifications />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/projects/:id" element={<ProjectPage />} />
-            </Routes>
-          </Suspense>
-
-          <Footer />
-        </div>
+        <MainContent />
       </LazyMotion>
     </Router>
   );

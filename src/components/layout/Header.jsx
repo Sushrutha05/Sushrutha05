@@ -28,12 +28,12 @@ const Header = () => {
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-machine-black/80 backdrop-blur-md border-b border-white/5' : 'bg-transparent'}`}
         >
             <div className="container mx-auto px-6 h-20 flex items-center justify-between">
-                <Link to="/" className="group flex items-center gap-2 z-50 relative">
-                    <div className="w-8 h-8 bg-white text-black flex items-center justify-center font-bold font-display text-lg rounded-sm group-hover:bg-machine-accent transition-colors duration-300">
+                <Link to="/" className="group flex items-center gap-2 z-50 relative font-mono text-sm">
+                    <div className="w-6 h-6 bg-machine-accent text-machine-black flex items-center justify-center font-bold text-xs">
                         S
                     </div>
-                    <span className="font-display font-bold text-xl tracking-widest uppercase text-white group-hover:text-machine-accent transition-colors duration-300">
-                        Nayak
+                    <span className="font-bold tracking-widest uppercase text-white group-hover:text-machine-accent transition-colors duration-300">
+                        Sushrutha
                     </span>
                 </Link>
 

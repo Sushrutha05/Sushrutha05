@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NaadSwar — Premium Pitch Awareness</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #000000;
+            --accent-color: #ff2d55; /* Apple Music Red-Pink */
+            --secondary-accent: #5e5ce6; /* Apple Indigo */
+            --text-primary: #ffffff;
+            --text-secondary: #86868b;
+            --glass-bg: rgba(22, 22, 23, 0.72);
+            --nav-height: 44px;
+            --section-padding: 120px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        /* Nav */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--nav-height);
+            background: var(--glass-bg);
+            backdrop-filter: saturate(180%) blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-content {
+            max-width: 1024px;
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 19px;
+            letter-spacing: -0.5px;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            opacity: 0.8;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 400;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+        }
+
+        .cta-btn {
+            background: var(--accent-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 980px;
+            font-size: 12px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Hero */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: var(--nav-height);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('naadswar_hero_abstract_sound_1773295736245.png');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            opacity: 0.6;
+            filter: brightness(0.7);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 80px;
+            font-weight: 800;
+            letter-spacing: -3px;
+            margin-bottom: 16px;
+            background: linear-gradient(180deg, #fff 0%, #aaa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 24px;
+            color: var(--text-secondary);
+            font-weight: 500;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        /* Sections */
+        section {
+            padding: var(--section-padding) 20px;
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-header h2 {
+            font-size: 56px;
+            font-weight: 700;
+            letter-spacing: -2px;
+            margin-bottom: 24px;
+        }
+
+        .section-header p {
+            font-size: 21px;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: #161617;
+            border-radius: 28px;
+            padding: 48px;
+            transition: transform 0.4s cubic-bezier(0.1, 0, 0.1, 1);
+            overflow: hidden;
+            position: relative;
+            min-height: 480px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .feature-card:hover {
+            transform: scale(1.02);
+        }
+
+        .feature-card h3 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            font-size: 19px;
+            color: var(--text-secondary);
+        }
+
+        .feature-image {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin-top: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        /* App Mockup Section */
+        .mockup-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 80px auto 0;
+            text-align: center;
+        }
+
+        .mockup-img {
+            width: 100%;
+            border-radius: 40px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+        }
+
+        /* Call to Action */
+        .final-cta {
+            text-align: center;
+            padding: 160px 20px;
+            background: radial-gradient(circle at center, #1b1b1b 0%, #000 100%);
+        }
+
+        .final-cta h2 {
+            font-size: 72px;
+            font-weight: 800;
+            margin-bottom: 40px;
+        }
+
+        .large-btn {
+            background: white;
+            color: black;
+            padding: 18px 36px;
+            border-radius: 980px;
+            font-size: 17px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .large-btn:hover {
+            background: #f5f5f7;
+            transform: scale(1.05);
+        }
+
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 48px; }
+            .section-header h2 { font-size: 36px; }
+            .features-grid { grid-template-columns: 1fr; }
+            .feature-card { padding: 32px; min-height: 400px; }
+            .final-cta h2 { font-size: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-content">
+            <a href="#" class="logo">NaadSwar</a>
+            <div class="nav-links">
+                <a href="#overview">Overview</a>
+                <a href="#features">Features</a>
+                <a href="#technology">Technology</a>
+                <a href="https://drive.google.com/uc?export=download&id=1VkXRROFYG7HVIse-xmvWeDH5XDb_vsbq" class="cta-btn">Download</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1 class="reveal">Precisely You.</h1>
+            <p class="reveal" style="transition-delay: 100ms;">The next dimension of Indian Classical pitch awareness. Low-latency, microtone accurate, and deeply musical.</p>
+            <a href="https://drive.google.com/uc?export=download&id=1VkXRROFYG7HVIse-xmvWeDH5XDb_vsbq" class="large-btn reveal" style="transition-delay: 200ms;">Download the App</a>
+        </div>
+    </header>
+
+    <section id="overview">
+        <div class="section-header">
+            <h2 class="reveal">Bridging the Gap.</h2>
+            <p class="reveal">Western tuners miss the magic between the notes. NaadSwar is built for the nuance of Shrutis, capturing the Mandra, Madhya, and Taar saptaks with absolute precision.</p>
+        </div>
+        
+        <div class="mockup-container reveal">
+            <img src="naadswar_app_ui_mockup_1773295755920.png" alt="NaadSwar App Interface" class="mockup-img">
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="features-grid">
+            <div class="feature-card reveal">
+                <div>
+                    <h3>Real-time Analysis.</h3>
+                    <p>Experience zero-latency frequency tracking. Every microtone is visualized as you sing, providing immediate feedback on your tonal stability.</p>
+                </div>
+                <!-- Abstract visual placeholder or feature specific icon could go here -->
+            </div>
+            <div class="feature-card reveal" style="transition-delay: 100ms;">
+                <div>
+                    <h3>Customizable "Sa".</h3>
+                    <p>Align the entire analysis to your personal vocal range. Set your base frequency once and NaadSwar handles the complex relationship of the Swaras.</p>
+                </div>
+            </div>
+            <div class="feature-card reveal">
+                <div>
+                    <h3>Visual Histogram.</h3>
+                    <p>See your sound. The dynamic histogram provides a deep look at noise intensity and harmonic richness, essential for perfect Saptak practice.</p>
+                </div>
+            </div>
+            <div class="feature-card reveal" style="transition-delay: 100ms;">
+                <div>
+                    <h3>Notation Mastery.</h3>
+                    <p>Built-in cheat sheets and reference guides ensure you never lose track of the underlying mathematical beauty of the Raga.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <h2 class="reveal">Elevate your Riyaaz.</h2>
+        <p class="reveal" style="margin-bottom: 40px; font-size: 21px; color: var(--text-secondary);">Join a new generation of vocalists and instrumentalists mastering the art of precision.</p>
+        <a href="https://drive.google.com/uc?export=download&id=1VkXRROFYG7HVIse-xmvWeDH5XDb_vsbq" class="large-btn reveal">Get NaadSwar Now</a>
+    </section>
+
+    <footer style="padding: 60px 20px; text-align: center; border-top: 1px solid #333;">
+        <p style="color: var(--text-secondary); font-size: 12px;">&copy; 2025 Sushrutha. Designed with the precision of Indian Classical Music.</p>
+    </footer>
+
+    <script>
+        // Reveal on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

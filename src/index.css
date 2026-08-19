@@ -1,21 +1,25 @@
-﻿@import "tailwindcss";
+@import "tailwindcss";
+@import "@fontsource/inter";
 
 @theme {
-    --font-sans: 'Inter', sans-serif;
-    --font-display: 'Inter', sans-serif;
+    --font-sans: 'IBM Plex Sans', 'Inter', sans-serif;
+    --font-display: 'IBM Plex Sans', 'Inter', sans-serif;
+    --font-mono: 'IBM Plex Mono', 'JetBrains Mono', monospace;
 
-    --color-machine-black: #000000;
-    --color-machine-dark: #050505;
-    --color-machine-surface: #0f0f0f;
-    --color-machine-plate: #141414;
-    --color-machine-border: #222222;
-    --color-machine-platinum: #cfd3d4;
-    --color-machine-chrome: #e5e5e5;
-    --color-machine-accent: #4696ff;
+    --color-machine-black: #0F1115; /* Primary Background: Deep Charcoal */
+    --color-machine-dark: #141821; /* Secondary Surface/BG: Rich Graphite */
+    --color-machine-surface: #1B212E; /* Secondary Surface: Slate Gray */
+    --color-machine-plate: #151A24; /* Secondary Surface: Dark Steel Blue */
+    --color-machine-border: #2E3748; /* Cool Steel Blue Border */
+    --color-machine-platinum: #D1D5DB; /* Muted Text */
+    --color-machine-chrome: #F3F4F6; /* Primary Light Text */
+    --color-machine-accent: #38BDF8; /* Primary Accent: Soft Cyan / Muted Electric Blue */
+    --color-machine-accent-amber: #F59E0B; /* Secondary Accent: Warm Amber for highlights */
+    --color-machine-grid: rgba(46, 55, 72, 0.15); /* Blueprint grid color */
 
-    --animate-fade-in: fadeIn 1s ease-out forwards;
-    --animate-slide-up: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    --animate-fade-in: fadeIn 0.8s ease-out forwards;
+    --animate-slide-up: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    --animate-pulse-slow: pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 
     @keyframes fadeIn {
         0% {
@@ -29,7 +33,7 @@
 
     @keyframes slideUp {
         0% {
-            transform: translateY(20px);
+            transform: translateY(12px);
             opacity: 0;
         }
 
@@ -56,38 +60,74 @@
     h5,
     h6 {
         font-family: var(--font-display);
-        @apply tracking-tight text-white;
+        @apply tracking-tight text-white font-semibold;
     }
 
     ::selection {
-        background-color: rgba(70, 150, 255, 0.2);
+        background-color: rgba(56, 189, 248, 0.2);
         color: white;
     }
 }
 
 @layer utilities {
-    .glass-panel {
-        background-color: rgba(15, 15, 15, 0.8);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    /* Workbench layout styling */
+    .lab-panel {
+        background-color: var(--color-machine-dark);
+        border: 1px solid var(--color-machine-border);
+        position: relative;
     }
 
-    .glass-panel-hover {
-        @apply transition-all duration-500;
+    .lab-panel-hover {
+        @apply transition-all duration-300;
     }
 
-    .glass-panel-hover:hover {
-        background-color: rgba(20, 20, 20, 0.9);
-        border-color: rgba(255, 255, 255, 0.1);
+    .lab-panel-hover:hover {
+        border-color: var(--color-machine-accent);
+        box-shadow: 0 0 15px rgba(56, 189, 248, 0.05);
     }
 
-    .text-glow {
-        text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    /* Muted text glow */
+    .text-glow-subtle {
+        text-shadow: 0 0 10px rgba(56, 189, 248, 0.15);
     }
 
-    .border-glow {
-        box-shadow: 0 0 15px -3px rgba(70, 150, 255, 0.1);
+    .text-glow-amber {
+        text-shadow: 0 0 10px rgba(245, 158, 11, 0.25);
+    }
+
+    /* Subtle blueprint style background grid */
+    .blueprint-grid {
+        background-image: linear-gradient(to right, var(--color-machine-grid) 1px, transparent 1px),
+                          linear-gradient(to bottom, var(--color-machine-grid) 1px, transparent 1px);
+        background-size: 32px 32px;
+    }
+
+    /* Blueprint divider line */
+    .blueprint-divider {
+        height: 1px;
+        background: linear-gradient(to right, 
+            transparent 0%, 
+            var(--color-machine-border) 10%, 
+            var(--color-machine-border) 90%, 
+            transparent 100%
+        );
+        position: relative;
+    }
+
+    .blueprint-divider::after {
+        content: '';
+        position: absolute;
+        top: -3px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 7px;
+        height: 7px;
+        background-color: var(--color-machine-accent);
+        border-radius: 50%;
+    }
+
+    .blueprint-divider-amber::after {
+        background-color: var(--color-machine-accent-amber);
     }
 }
 
@@ -102,12 +142,12 @@
 
 ::-webkit-scrollbar-thumb {
     background-color: var(--color-machine-border);
-    border-radius: 9999px;
-    transition: background-color 0.3s;
+    border-radius: 3px;
+    transition: background-color 0.2s;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(207, 211, 212, 0.2);
+    background-color: var(--color-machine-accent);
 }
 
 /* Smooth Scrolling */
@@ -117,9 +157,9 @@ html {
 
 .cursor-glow {
     position: fixed;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(70, 150, 255, 0.08) 0%, transparent 60%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.05) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
     transform: translate(-50%, -50%);
@@ -129,7 +169,7 @@ html {
 }
 
 .cursor-glow.active {
-    width: 100px;
-    height: 100px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
 }

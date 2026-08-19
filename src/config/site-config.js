@@ -34,46 +34,26 @@ export const SiteConfig = {
 
     projects: [
         {
-            id: "leetgitbot",
-            title: "LeetGitBot",
-            subtitle: "Automated Coding Progress Tracking for Discord Communities",
-            description: "A Discord bot that automates LeetCode progress tracking and GitHub activity updates to encourage consistent problem-solving and peer accountability.",
-            image: "/leetgitbot/image.png",
-            tags: ["Python", "Discord API", "Automation", "REST APIs", "Developer Productivity"],
-            link: "/projects/leetgitbot",
-            problem: "Developers often struggle to maintain consistency in daily coding practice and lack a unified, social way to track progress across different platforms like LeetCode and GitHub.",
-            solution: "I engineered a Discord bot that bridges this gap by automating the retrieval and broadcasting of coding metrics. It creates a feedback loop of accountability by visualizing daily achievements within the community.",
-            architecture: "Built with Python and discord.py, the bot interfaces with LeetCode's GraphQL API and GitHub's REST API. It uses a polling mechanism to fetch updates and maintains a local database for user mapping and streak tracking.",
-            outcome: "The bot successfully drives engagement in developer communities, transforming individual coding efforts into a shared, gamified experience that encourages consistency.",
-            features: [
-                "Automated retrieval of LeetCode statistics via APIs",
-                "Real-time progress updates posted to Discord channels",
-                "GitHub activity integration to reflect coding consistency",
-                "Command-based controls for users and servers",
-                "Designed for low-latency, scalable community use"
-            ],
-            links: {
-                github: "https://github.com/Sushrutha05/LeetGitBot"
-            }
-        },
-        {
             id: "naadswar",
             title: "NaadSwar",
-            subtitle: "Acoustic Analysis Engine",
-            description: "Real-time frequency analysis and pitch correction system for Indian Classical Music.",
+            subtitle: "Real-time pitch detection for Indian classical music",
+            domain: "Audio Processing",
+            goal: "Provide musicians with real-time feedback on swaras and octaves.",
+            learning: "Learined about Fast Fourier Transforms (FFT) and frequency extraction from microphone inputs.",
+            description: "A pitch recognition tool built to help vocalists and instrumentalists see their exact pitch and swara mapping in real-time.",
             image: "/naadswar/image.png",
-            tags: ["Signal Processing", "Flutter", "Real-time Audio"],
-            link: "/projects/naadswar",
-            problem: "Indian Classical Music relies on precise microtones (Shrutis) that standard Western tuners fail to capture accurately. Musicians need a tool that understands the nuances of the varying saptaks and note types.",
-            solution: "NaadSwar is a Flutter-based mobile application designed specifically for this context. It performs real-time pitch detection and maps frequencies to the closest Swar, supporting all three octaves (Mandra, Madhya, Taar).",
-            architecture: "The app leverages Flutter for a high-performance cross-platform UI. Under the hood, it utilizes native audio processing libraries to perform Fast Fourier Transform (FFT) on microphone input, converting raw audio signals into precise frequency data in real-time.",
-            outcome: "A minimal, low-latency tool that provides vocalists and instrumentalists with immediate, accurate visual feedback, aiding in the perfection of intonation.",
+            tags: ["Signal Processing", "Flutter", "Real-time Audio", "FFT"],
+            link: "/naadswar-premium",
+            problem: "Indian Classical Music relies on precise microtones (Shrutis) that standard Western chromatic tuners fail to capture accurately. I wanted to build a tuner that understands the scale intervals and note types of classical vocals.",
+            solution: "NaadSwar maps incoming frequency inputs to the closest Swar across three classical octaves (Mandra, Madhya, Taar) in real-time.",
+            architecture: "Built with Flutter for cross-platform interface rendering. Audio inputs from the microphone are analyzed using a Fast Fourier Transform (FFT) calculation to extract fundamental pitch values.",
+            outcome: "A simple, low-latency pitch visualizer that provides vocalists with clear indicators of their intonation.",
             features: [
-                "Live microphone input",
-                "Debug Settings Screen with adjustable Gain, History Size, and Buffer Size",
-                "Visual Histogram Feedback",
-                "Notation Cheatsheet for quick reference",
-                "Customizable base Sa frequency"
+                "Microphone frequency extraction using FFT analysis",
+                "Debug settings to tune audio gain and buffer sizing",
+                "Visual swar feedback histogram",
+                "Reference table of Indian classical notes and saptaks",
+                "Adjustable base Sa frequency setup"
             ],
             links: {
                 external: {
@@ -83,132 +63,103 @@ export const SiteConfig = {
             }
         },
         {
-            id: "fingersense",
-            title: "FingerSense",
-            subtitle: "Real-Time Gesture Intent Detection System",
-            description: "Real-time detection of offensive hand gestures with adaptive blur-based censorship using computer vision.",
-            image: "/fingersense/FingerSenseDemo.png",
-            tags: ["Computer Vision", "Python", "OpenCV", "MediaPipe", "HCI"],
-            link: "/projects/fingersense",
-            problem: "Automated content moderation in live video feeds is challenging, particularly when it comes to detecting and censoring specific, offensive gestures in real-time without false positives.",
-            solution: "FingerSense is a computer vision system that identifies offensive hand gestures and applies localized censorship. It focuses on intent recognition rather than just shape matching to ensure accuracy.",
-            architecture: "The system uses Python, OpenCV, and MediaPipe for hand landmark detection. It implements a custom logic layer that analyzes the relative positions of finger landmarks and uses temporal voting to stabilize detections across video frames.",
-            outcome: "A robust, real-time censorship tool that effectively blurs offensive gestures while handling motion blur and partial occlusions, suitable for live streaming applications.",
+            id: "esp32-mp3",
+            title: "ESP32 MP3 Player",
+            subtitle: "Hardware music player built using ESP32 and I2S audio",
+            domain: "Embedded Systems",
+            goal: "Build a physical MP3 player to understand how digital audio is handled at the hardware level.",
+            learning: "Learned about hardware interfaces, microcontrollers, memory layouts, and communication protocols like I2S.",
+            description: "A microcontroller project that reads MP3 files from storage and decodes them to sound waves via an external amplifier.",
+            image: "/esp32-mp3.png",
+            tags: ["ESP32", "C++", "I2S Audio", "SPIFFS", "Embedded Systems"],
+            link: "/projects/esp32-mp3",
+            problem: "Using modern operating systems makes it hard to see how digital bytes are converted to analog sound pressure waves.",
+            solution: "I wired an ESP32 microcontroller to an external digital-to-analog converter (DAC) and wrote firmware to decode and play MP3 files.",
+            architecture: "Written in C++ using the Helix library to decode MP3 stream bytes. The decoded PCM data is transferred over the I2S protocol to a MAX98357A amplifier connected to a speaker.",
+            outcome: "A working prototype that reads files from the ESP32's flash memory and plays audio smoothly using buttons for hardware interrupts.",
             features: [
-                "Finger-level landmark analysis using MediaPipe",
-                "Middle-finger gesture detection logic",
-                "Temporal voting to reduce flicker and false positives",
-                "Localized Gaussian blur for real-time censorship",
-                "Graceful handling of hand entry and exit from frame"
+                "Reads music files from the local SPIFFS filesystem",
+                "Buffered I2S data stream routing to prevent playback stuttering",
+                "Helix software decoder optimization for microcontroller cores",
+                "Interrupt-driven buttons for play, pause, and volume control"
+            ],
+            links: {
+                github: "https://github.com/Sushrutha05/ESP32-Audio-Player"
+            }
+        },
+        {
+            id: "ann-from-scratch",
+            title: "ANN From Scratch",
+            subtitle: "Vectorized neural network library implemented in NumPy",
+            domain: "Machine Learning Fundamentals",
+            goal: "Write model layers and learning steps manually to understand the mathematical concepts.",
+            learning: "Learned matrix calculus, backpropagation formulas, and vector mathematics.",
+            description: "A machine learning project built with Python and NumPy to demonstrate how backpropagation works step-by-step.",
+            image: "/ann-from-scratch.png",
+            tags: ["Python", "NumPy", "Matrix Calculus", "Machine Learning"],
+            link: "/projects/ann-from-scratch",
+            problem: "Standard libraries make it easy to train models in a single line, which conceals the mathematics of how neural networks actually optimize parameters.",
+            solution: "I built a feedforward neural network from scratch using only matrix math in NumPy, implementing both forward passes and manual parameter updates.",
+            architecture: "Designed as modular layer objects with custom forward and backward functions, implementing derivatives for activations (ReLU, Sigmoid, Softmax) and loss calculations.",
+            outcome: "Successfully classified handwritten digits from standard test datasets, validating the correctness of the underlying calculus codes.",
+            features: [
+                "Vectorized forward passes implementing basic matrix products",
+                "Manual backpropagation implementing chain rule derivative steps",
+                "Layer functions supporting ReLU, Sigmoid, and Softmax activations",
+                "Mini-batch gradient descent updates calculated without external framework aid"
+            ],
+            links: {
+                github: "https://github.com/Sushrutha05/ANN-From-Scratch"
+            }
+        },
+        {
+            id: "middle-finger-blur",
+            title: "Middle Finger Blur",
+            subtitle: "Detects specific hand gestures and applies real-time blur",
+            domain: "Computer Vision",
+            goal: "Detect hand shapes in a video feed and blur out specific gestures.",
+            learning: "Learned about image coordinate systems, landmark tracking, and real-time frames-per-second constraints.",
+            description: "A computer vision utility that uses hand tracking coordinates to identify targets and apply a visual blur filter.",
+            image: "/fingersense/FingerSenseDemo.png",
+            tags: ["Computer Vision", "Python", "OpenCV", "MediaPipe", "Real-Time Systems"],
+            link: "/projects/middle-finger-blur",
+            problem: "I wanted to learn how computer vision can detect gestures and perform localized filters in a live video stream without causing lag.",
+            solution: "I built a Python script that tracks hand landmark points, determines if a gesture matches target coordinate configurations, and applies a blur filter.",
+            architecture: "Utilizes MediaPipe for hand landmark coordinates, runs simple distance calculations between joints to detect gesture matches, and uses OpenCV to render a Gaussian blur over the target area.",
+            outcome: "A simple gesture-matching program that runs in real-time on standard laptop cameras.",
+            features: [
+                "Hand coordinate tracking using MediaPipe landmarks",
+                "Simple vector calculation based on finger joint angles",
+                "Temporal filters to reduce flickering detections",
+                "Gaussian blur applied dynamically over hand coordinates"
             ],
             links: {
                 github: "https://github.com/Sushrutha05/FingerSense"
             }
         },
         {
-            id: "tabkeep",
-            title: "TabKeep",
-            subtitle: "Browser Resource Manager",
-            description: "Intelligent chrome extension for managing tab clutter and memory usage.",
-            image: "/tabkeep/screenshot.png",
-            tags: ["JavaScript", "Chrome API", "Productivity"],
-            link: "/projects/tabkeep",
-            problem: "Modern workflows often lead to an explosion of open browser tabs, causing high memory usage, system slowdowns, and cognitive overload for the user.",
-            solution: "TabKeep is a Chrome extension designed to declutter the browser. It allows users to save active sessions, suspend inactive tabs to free up RAM, and organize their digital workspace.",
-            architecture: "Built with JavaScript and the Chrome Extensions API, it interacts with the `tabs`, `storage`, and `alarms` permissions to manage tab states and persist session data locally.",
-            outcome: "Significantly improved browser performance and user focus by reducing memory footprint and providing a structured way to manage browsing sessions.",
+            id: "modular-controller",
+            title: "Modular Controller",
+            subtitle: "Customizable gamepad hardware with hot-swappable buttons",
+            domain: "Embedded Hardware",
+            goal: "Create a game controller with modular buttons to explore hardware modularity.",
+            learning: "Learned about hardware buses (I2C, SPI), electronic layouts, and custom device firmware.",
+            description: "A physical game controller prototype that allows modular blocks to be swapped out dynamically.",
+            image: "/nexus/hero.png",
+            tags: ["C/C++", "Embedded Hardware", "I2C", "SPI", "Product Modularity"],
+            link: "/nexus-modular",
+            problem: "Traditional game controllers are glued or soldered together, making it difficult to replace worn-out joysticks or reconfigure button layouts.",
+            solution: "I designed a prototype gamepad with hot-swappable hardware modules, letting buttons and sticks connect and configure on the fly.",
+            architecture: "Uses a central microcontroller to communicate with modular input slots over I2C and SPI buses, using a custom protocol to detect when a module is plugged in.",
+            outcome: "A physical prototype showcasing layout flexibility and automatic input routing in microcontroller firmware.",
             features: [
-                "Save and restore tab sessions",
-                "Auto-suspend inactive tabs",
-                "Search across open tabs",
-                "Dark mode support"
+                "Firmware protocol to identify hot-swapped components in C++",
+                "Input routing utilizing standard I2C and SPI communication protocols",
+                "Transparent cover showcasing internal wires and circuits",
+                "Low-latency input processing for responsive gaming controls"
             ],
             links: {
-                github: "https://github.com/Sushrutha05/TabKeep"
-            }
-        },
-        {
-            id: "text-to-pdf",
-            title: "TextToPDF",
-            subtitle: "Document Conversion Tool",
-            description: "Efficient utility for converting raw text files into formatted PDF documents.",
-            image: "/texttopdf/texttopdf.png",
-            tags: ["Python", "File Processing", "Automation"],
-            link: "/projects/text-to-pdf",
-            problem: "Converting simple text files into professional, printable PDF documents often requires heavy word processing software or manual formatting, which is inefficient for batch operations.",
-            solution: "TextToPDF is a lightweight desktop utility that automates this conversion. It provides a simple interface to convert text files while handling pagination, fonts, and margins automatically.",
-            architecture: "Written in Python, the tool uses the FPDF library for PDF generation. It parses text input and renders it onto PDF pages, handling layout calculations dynamically.",
-            outcome: "A streamlined, standalone executable that simplifies document archiving and report generation for users who deal with raw text data.",
-            features: [
-                "Batch processing of text files",
-                "Customizable font and layout settings",
-                "Automatic table of contents generation",
-                "Standalone .exe for easy installation"
-            ],
-            links: {
-                github: "https://github.com/Sushrutha05/PDF-APP"
-            }
-        },
-        {
-            id: "telco-churn",
-            title: "Telco Churn",
-            subtitle: "Customer Retention Analysis",
-            description: "Predicting customer churn in the telecom industry using machine learning models.",
-            tags: ["Python", "Scikit-Learn", "Data Analysis", "EDA"],
-            link: "/projects/telco-churn",
-            problem: "Customer churn is a critical issue for telecom providers, directly impacting revenue. Identifying at-risk customers before they leave is essential for retention strategies.",
-            solution: "I developed a machine learning pipeline to analyze customer behavior and predict the likelihood of churn. This enables proactive intervention.",
-            architecture: "The project uses a Python data science stack (Pandas, Scikit-Learn). It involves a comprehensive pipeline: data cleaning, exploratory data analysis (EDA), feature engineering, and the training of ensemble models like Random Forest and XGBoost.",
-            outcome: "The model provides actionable insights into the key drivers of churn and delivers accurate predictions, allowing businesses to target retention efforts effectively.",
-            features: [
-                "Data Preprocessing: Handling missing values, encoding categorical variables, feature scaling",
-                "Exploratory Data Analysis (EDA): Analyzing churn distribution, feature correlations, and patterns",
-                "Model Training: Logistic Regression, Decision Trees, Random Forest, XGBoost",
-                "Evaluation: Accuracy, Precision, Recall, and F1-score metrics"
-            ],
-            links: {
-                github: "https://github.com/Sushrutha05/Telco-Customer-Churn"
-            }
-        },
-        {
-            id: "iris-ml-model",
-            title: "Iris ML Model Comparison",
-            subtitle: "Classification & Regression Analysis",
-            description: "Comparing various ML models on the classic Iris dataset.",
-            tags: ["Python", "Scikit-Learn", "Classification", "Regression"],
-            link: "/projects/iris-ml-model",
-            problem: "For students and practitioners, understanding the practical trade-offs between different machine learning algorithms can be abstract without direct comparison.",
-            solution: "This project serves as a rigorous benchmark study, implementing and comparing multiple classification and regression algorithms on the standard Iris dataset.",
-            architecture: "Implemented in Python using Scikit-Learn, the project systematically trains and evaluates models like KNN, Logistic Regression, SVM, and Decision Trees, logging performance metrics for comparison.",
-            outcome: "A clear, empirical demonstration of how different algorithms perform on the same data, providing a reference for model selection and behavior.",
-            features: [
-                "Classification Models: KNN, Logistic Regression, Decision Tree, SVC",
-                "Regression Models: KNN, Linear, Decision Tree, SVR",
-                "Performance Analysis: F1 Score 1.0 (Classification), R² Score 1.0 (Regression)"
-            ],
-            links: {
-                github: "https://github.com/Sushrutha05/Iris-ML-Model"
-            }
-        },
-        {
-            id: "custom-ml-lib",
-            title: "mllib",
-            subtitle: "Machine Learning Library in C",
-            description: "A lightweight and extensible ML library written in pure C.",
-            tags: ["C", "Machine Learning", "Low-level", "No Dependencies"],
-            link: "/projects/custom-ml-lib",
-            problem: "High-level libraries like TensorFlow or Scikit-Learn abstract away the mathematical foundations of machine learning, making it difficult to grasp the low-level mechanics.",
-            solution: "mllib is a custom-built machine learning library written in pure C. It implements core algorithms from scratch without external dependencies, prioritizing educational clarity and efficiency.",
-            architecture: "The library is architected around a custom matrix operations engine. It implements algorithms like Linear Regression using Gradient Descent, managing memory manually for maximum performance.",
-            outcome: "A highly efficient, portable library that demonstrates the internal workings of ML algorithms and serves as a solid foundation for embedded ML applications.",
-            features: [
-                "Simple and efficient ML algorithms in pure C",
-                "No external dependencies",
-                "Easy-to-use API via #include \"mllib.h\"",
-                "Open-source and extensible for new ML models"
-            ],
-            links: {
-                github: "https://github.com/Sushrutha05/ML-C-Library"
+                demo: "/nexus-modular"
             }
         }
     ],

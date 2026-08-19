@@ -9,6 +9,24 @@
 
 <br>
 
+
+        <div align="center">
+
+        <h3><code>avi@github ~ $ ./contributions.sh</code></h3>
+        <img src="./contrib-heatmap.svg" width="860" />
+
+        <br><br>
+
+        <h3><code>avi@github ~ $ whoami</code></h3>
+        <table>
+          <tr>
+            <td valign="top"><img src="./avi-ascii.svg" width="370" /></td>
+            <td valign="top"><img src="./info-card.svg" width="490" /></td>
+          </tr>
+        </table>
+
+        </div>
+        
 [![GitHub](https://img.shields.io/badge/GitHub-Sushrutha05-6366f1?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Sushrutha05)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-6366f1?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sushrutha-nayak-528775293/)
 [![Email](https://img.shields.io/badge/Email-Contact-6366f1?style=for-the-badge&logo=gmail&logoColor=white)](mailto:sushruthavn@gmail.com)

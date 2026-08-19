@@ -1,89 +1,110 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { SiteConfig } from '../config/site-config';
-import { ArrowUpRight, Layers, Zap, Database } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/seo/SEO';
 
 const Work = () => {
     return (
-        <main className="min-h-screen pt-32 pb-20">
+        <main className="min-h-screen pt-32 pb-20 relative">
+            {/* Blueprint Grid Overlay */}
+            <div className="absolute inset-0 blueprint-grid opacity-10 pointer-events-none" />
+            
             <SEO
                 title="Work"
-                description="Explore Sushrutha's portfolio of engineering projects, including machine learning models, full-stack applications, and system designs."
-                keywords="projects, software engineering, portfolio, machine learning, web development"
+                description="Explore Sushrutha's portfolio of engineering projects and low-level code explorations."
+                keywords="projects, software engineering, portfolio, embedded systems, signals, audio processing"
             />
-            <section className="container mx-auto px-6 mb-20">
+            
+            <section className="container mx-auto px-6 mb-24 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     className="max-w-4xl"
                 >
-                    <h1 className="text-5xl md:text-7xl font-display font-bold text-white mb-6 tracking-tight">ENGINEERED<br />SOLUTIONS</h1>
-                    <p className="text-machine-platinum/60 text-lg font-light max-w-2xl">
-                        A collection of high-performance systems and applications designed for scale, efficiency, and user experience.
+                    <span className="text-machine-accent font-mono text-xs uppercase tracking-widest block mb-3 font-semibold text-glow-cyan">
+                        Projects & Experiments
+                    </span>
+                    <h1 className="text-5xl md:text-7xl font-display font-bold text-white mb-6 tracking-tight">Things I've Built</h1>
+                    <p className="text-machine-platinum/60 text-lg font-light max-w-2xl leading-relaxed">
+                        A catalog of experimental prototypes and systems built to investigate concepts in embedded hardware, signal analysis, computer vision, and machine learning.
                     </p>
                 </motion.div>
             </section>
 
-            <section className="container mx-auto px-6">
-                <div className="space-y-32">
+            <section className="container mx-auto px-6 relative z-10">
+                <div className="space-y-24">
                     {SiteConfig.projects.map((project, index) => (
                         <motion.article
                             key={project.id}
-                            initial={{ opacity: 0, y: 50 }}
+                            initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                            className="group"
+                            transition={{ duration: 0.7 }}
+                            className="lab-panel p-8 md:p-12 hover:border-machine-accent/50 transition-all duration-300 relative group"
                         >
+                            {/* Corner indicators */}
+                            <div className="absolute top-2 right-4 font-mono text-[9px] text-machine-border">
+                                Project 0{index + 1}
+                            </div>
+
                             {/* Project Header */}
-                            <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 border-b border-white/10 pb-4">
+                            <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 border-b border-machine-border pb-6">
                                 <div>
-                                    <span className="text-machine-accent font-mono text-xs mb-2 block">0{index + 1} // {project.tags[0].toUpperCase()}</span>
-                                    <h2 className="text-4xl md:text-5xl font-display font-bold text-white tracking-tight">{project.title}</h2>
-                                    <p className="text-machine-platinum/60 text-lg mt-2">{project.subtitle}</p>
+                                    <span className="text-machine-accent font-mono text-xs mb-1 block uppercase tracking-wider">{project.domain}</span>
+                                    <h2 className="text-3xl md:text-4xl font-display font-bold text-white tracking-tight">{project.title}</h2>
+                                    <p className="text-machine-platinum/50 font-mono text-xs mt-1">{project.subtitle}</p>
                                 </div>
-                                <Link to={project.link} className="hidden md:flex items-center gap-2 px-6 py-3 border border-white/10 text-white text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300">
-                                    Explore System <ArrowUpRight className="w-4 h-4" />
+                                <Link to={project.link} className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 border border-machine-border group-hover:border-machine-accent text-white hover:bg-machine-accent hover:text-machine-black font-mono text-xs uppercase transition-all duration-250">
+                                    Learn More <ArrowUpRight className="w-4 h-4" />
                                 </Link>
                             </div>
 
-                            {/* Project Card */}
+                            {/* Project Content */}
                             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
                                 {/* Image Area */}
                                 {project.image && (
-                                    <div className="lg:col-span-8 relative overflow-hidden bg-machine-surface aspect-video group-hover:border-machine-accent/50 border border-white/5 transition-colors duration-500">
-                                        <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
+                                    <div className="lg:col-span-7 relative overflow-hidden bg-machine-black/40 aspect-video border border-machine-border/60">
                                         <img
                                             src={project.image}
                                             alt={project.title}
-                                            className="w-full h-full object-contain bg-machine-black/50 transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                                            className="w-full h-full object-contain opacity-80 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-500"
                                         />
                                     </div>
                                 )}
 
                                 {/* Details Area */}
-                                <div className={`${project.image ? 'lg:col-span-4' : 'lg:col-span-12'} flex flex-col justify-between`}>
-                                    <div>
-                                        <h3 className="text-white font-bold mb-4 uppercase tracking-widest text-sm">Overview</h3>
-                                        <p className="text-machine-platinum/60 leading-relaxed mb-8 font-light text-sm">
-                                            {project.description}
-                                        </p>
+                                <div className={`${project.image ? 'lg:col-span-5' : 'lg:col-span-12'} flex flex-col justify-between space-y-6`}>
+                                    <div className="space-y-4 font-sans text-sm text-machine-platinum/80 leading-relaxed pl-2 border-l border-machine-border">
+                                        <div>
+                                            <strong className="text-machine-accent font-mono text-[11px] uppercase block mb-0.5">The Problem:</strong>
+                                            <p className="font-light text-xs sm:text-sm">{project.problem}</p>
+                                        </div>
+                                        <div>
+                                            <strong className="text-machine-accent-amber font-mono text-[11px] uppercase block mb-0.5">Solution:</strong>
+                                            <p className="font-light text-xs sm:text-sm">{project.solution || project.description}</p>
+                                        </div>
+                                        <div>
+                                            <strong className="text-machine-accent font-mono text-[11px] uppercase block mb-0.5">What I Learned:</strong>
+                                            <p className="font-light text-xs sm:text-sm">{project.learning}</p>
+                                        </div>
+                                    </div>
 
-                                        <h3 className="text-white font-bold mb-4 uppercase tracking-widest text-sm">Tech Stack</h3>
-                                        <div className="flex flex-wrap gap-2">
+                                    <div>
+                                        <strong className="text-white font-mono text-[11px] uppercase block mb-2">Technologies Used:</strong>
+                                        <div className="flex flex-wrap gap-1.5">
                                             {project.tags.map((tag) => (
-                                                <span key={tag} className="px-3 py-1 border border-white/10 text-machine-platinum/60 text-xs uppercase tracking-wider hover:border-machine-accent/50 hover:text-white transition-colors cursor-default">
+                                                <span key={tag} className="px-2 py-1 bg-machine-black border border-machine-border/60 text-machine-platinum/60 font-mono text-[10px]">
                                                     {tag}
                                                 </span>
                                             ))}
                                         </div>
                                     </div>
 
-                                    <Link to={project.link} className="md:hidden mt-8 flex items-center justify-center gap-2 px-6 py-3 border border-white/10 text-white text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300">
-                                        Explore System <ArrowUpRight className="w-4 h-4" />
+                                    <Link to={project.link} className="md:hidden flex items-center justify-center gap-2 px-6 py-3 border border-machine-accent text-white text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300">
+                                        Learn More <ArrowUpRight className="w-4 h-4" />
                                     </Link>
                                 </div>
                             </div>

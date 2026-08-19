@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SiteConfig } from '../config/site-config';
-import { Award, Shield, CheckCircle, ChevronDown, ChevronUp } from 'lucide-react';
+import { Award, Shield, ChevronDown, ChevronUp } from 'lucide-react';
 import SEO from '../components/seo/SEO';
 
 const CertificationCard = ({ cert, index }) => {
@@ -20,33 +20,33 @@ const CertificationCard = ({ cert, index }) => {
                 href={cert.verificationLink || "#"}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block h-full group relative bg-machine-surface border border-white/5 p-8 hover:border-machine-accent/50 transition-colors duration-300 cursor-pointer"
+                className="block h-full group relative lab-panel p-8 hover:border-machine-accent/50 transition-colors duration-300 cursor-pointer"
             >
                 <div className="absolute top-0 right-0 p-4 transition-opacity duration-300 opacity-50 group-hover:opacity-100">
                     {!imageError && cert.logo ? (
                         <img
                             src={cert.logo}
                             alt={`${cert.title} logo`}
-                            className="w-16 h-16 object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                            className="w-12 h-12 object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
                             onError={() => setImageError(true)}
                         />
                     ) : (
-                        <Shield className="w-12 h-12 text-machine-accent" strokeWidth={1} />
+                        <Shield className="w-10 h-10 text-machine-accent/80" strokeWidth={1} />
                     )}
                 </div>
 
                 <div className="mb-6">
-                    <span className="text-machine-accent font-mono text-xs mb-2 block flex items-center gap-2">
+                    <span className="text-machine-accent font-mono text-[10px] mb-2 block flex items-center gap-1">
                         {cert.id}
                         <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">↗</span>
                     </span>
-                    <h3 className="text-xl font-display font-bold text-white mb-1">{cert.title}</h3>
-                    <p className="text-machine-platinum/60 text-sm">{cert.issuer}</p>
+                    <h3 className="text-lg font-bold text-white mb-1">{cert.title}</h3>
+                    <p className="text-machine-platinum/60 text-xs font-mono">{cert.issuer}</p>
                 </div>
 
-                <div className="flex items-center justify-between border-t border-white/5 pt-4 mt-auto">
-                    <span className="text-machine-platinum/40 text-xs uppercase tracking-widest">{cert.type}</span>
-                    <span className="text-white font-mono text-xs">{cert.year}</span>
+                <div className="flex items-center justify-between border-t border-machine-border/60 pt-4 mt-auto">
+                    <span className="text-machine-platinum/40 text-[10px] font-mono uppercase tracking-wider">{cert.type}</span>
+                    <span className="text-white font-mono text-[10px]">{cert.year}</span>
                 </div>
             </a>
         </motion.article>
@@ -75,37 +75,41 @@ const Certifications = () => {
     const toggleView = () => {
         if (isExpanded) {
             setVisibleCount(6);
-            // Optional: Scroll back to top of grid or keep position? 
-            // Usually better to scroll to top of grid if list was very long, 
-            // but for now let's just collapse.
         } else {
             setVisibleCount(SiteConfig.certifications.length);
         }
     };
 
     return (
-        <main className="min-h-screen pt-32 pb-20">
+        <main className="min-h-screen pt-32 pb-20 relative">
+            {/* Blueprint Grid Background */}
+            <div className="absolute inset-0 blueprint-grid opacity-10 pointer-events-none" />
+
             <SEO
                 title="Certifications"
                 description="Verified certifications and credentials in Machine Learning, Cloud Computing, and Software Development."
                 keywords="certifications, credentials, machine learning, cloud computing, software development"
             />
-            <section className="container mx-auto px-6 mb-20">
+            
+            <section className="container mx-auto px-6 mb-20 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     className="max-w-4xl"
                 >
-                    <h1 className="text-5xl md:text-7xl font-display font-bold text-white mb-6 tracking-tight">CREDENTIALS<br />& VERIFICATION</h1>
-                    <p className="text-machine-platinum/60 text-lg font-light max-w-2xl">
-                        Validated technical competencies and industry-standard certifications.
+                    <span className="text-machine-accent font-mono text-xs uppercase tracking-widest block mb-3 font-semibold text-glow-cyan">
+                        Certifications
+                    </span>
+                    <h1 className="text-5xl md:text-7xl font-display font-bold text-white mb-6 tracking-tight">Credentials</h1>
+                    <p className="text-machine-platinum/60 text-lg font-light max-w-2xl leading-relaxed">
+                        A list of certifications and completed technical training programs.
                     </p>
                 </motion.div>
             </section>
 
-            <section className="container mx-auto px-6">
-                <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <section className="container mx-auto px-6 relative z-10">
+                <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
                     <AnimatePresence>
                         {displayedCerts.map((cert, index) => (
                             <CertificationCard key={cert.id} cert={cert} index={index} />
@@ -117,17 +121,17 @@ const Certifications = () => {
                     <div className="flex justify-center mb-20">
                         <button
                             onClick={toggleView}
-                            className="group flex items-center gap-2 px-8 py-4 bg-machine-surface border border-white/10 hover:border-machine-accent/50 text-white font-display font-bold tracking-widest uppercase text-sm transition-all duration-300 hover:bg-white/5"
+                            className="group flex items-center gap-2 px-6 py-3 border border-machine-border hover:border-machine-accent text-white font-mono text-xs uppercase tracking-wider transition-all duration-300 bg-machine-black/40 hover:bg-machine-accent hover:text-machine-black"
                         >
                             {isExpanded ? (
                                 <>
-                                    Show Less
-                                    <ChevronUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform" />
+                                    Collapse List
+                                    <ChevronUp className="w-4 h-4" />
                                 </>
                             ) : (
                                 <>
                                     View All Certifications
-                                    <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
+                                    <ChevronDown className="w-4 h-4" />
                                 </>
                             )}
                         </button>
@@ -141,9 +145,9 @@ const Certifications = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h2 className="text-2xl font-display font-bold text-white mb-8 flex items-center gap-3">
-                            <Award className="w-6 h-6 text-machine-accent" />
-                            DIGITAL BADGES
+                        <h2 className="text-xl font-bold text-white mb-8 flex items-center gap-3">
+                            <Award className="w-5 h-5 text-machine-accent" />
+                            Digital Badges
                         </h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
                             {SiteConfig.badges.map((badge, index) => (
